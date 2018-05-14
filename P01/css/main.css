@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:700|Source+Sans+Pro');
+body {
+    margin: 9rem 8%;
+    max-width: 50rem;
+    font-family: Source Sans Pro, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Roboto Mono, monospace;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+
+h1,
+h2 {
+    background-color: rgb(254, 224, 0);
+    padding: 0.3rem;
+}
+
+p,
+ul,
+ol {
+    font-size: 1.05rem;
+    max-width: 52%;
+}
+
+img {
+    width: 15rem;
+    display: inline-block;
+    vertical-align: top;
+}

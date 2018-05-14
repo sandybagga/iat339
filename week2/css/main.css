@@ -1,0 +1,50 @@
+body {
+    margin: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p, ol, ul {
+    max-width: 40rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: rgb(200, 0, 0);
+    transition: all 0.5s;
+}
+
+a:active, a:hover, a:focus {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+}
+
+.nav-item {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(200, 100, 75);
+    color: white;
+    box-sizing: border-box;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    border: 0.25rem solid rgba(50, 0, 0, 0)
+}
+
+.nav-item:hover, .nav-item:focus {
+    background-color: white;
+    border-color: rgb(50, 0, 0);
+}

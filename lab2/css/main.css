@@ -1,0 +1,35 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    display: block;
+}
+
+a:hover{
+    color: gold;
+}
+
+a:focus{ 
+    text-decoration: none;
+}
+
+section{
+    margin-bottom: 6rem;
+}
+
+p{
+    width: 33rem;
+}
+
+.button-style{
+    box-sizing: border-box;
+    background-color: gold;
+    border: 0.2rem solid goldenrod;
+    padding: 0.5rem;
+}
+
+.button-style:hover, .button-style:focus{ 
+    border-color: orange;
+    background-color: orange;
+}
