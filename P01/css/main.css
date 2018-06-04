@@ -62,13 +62,13 @@ code{
     border-bottom: 4px solid black;
 }
 
-a{
+a:not(.nav-button){
     font-family: Roboto Mono, monospace;
     color: #3518F1;
     text-decoration: none;
 }
 
-a:hover{
+a:not(.nav-button):hover{
     text-decoration: underline;
 }
 
