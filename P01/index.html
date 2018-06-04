@@ -12,17 +12,220 @@
 
 <body>
     <div class="wrap">
-        <section class="summary">
+        <section id="summary">
             <h1>valence</h1>
             <p>Valence is an online educational resource with a target audience of DIY electronics enthusiasts. The company's
                 business model relies on partnerships with manufacturing and retail organizations, as well as a paid membership
                 that grants users access to exclusive content and heavier discounts on components.</p>
         </section>
-        <section class="wireframes">
+        <section id="wireframes-container">
             <h2>wireframes</h2>
-            <section class="container">
-                <img src="img/wireframes.jpg" alt="Wireframes">
+            <ul>
+                <li id="phone-link">
+                    <a href="https://www.figma.com/proto/ElWGOvMBzCul25R1kuL5CBsr/Valence?scaling=contain&node-id=2%3A39">Smartphone Wireframes</a>
+                </li>
+                <li id="watch-link">
+                    <a href="https://www.figma.com/proto/ElWGOvMBzCul25R1kuL5CBsr/Valence?scaling=contain&node-id=33%3A98">Smartwatch Wireframes</a>
+                </li>
+                <li id="console-link">
+                    <a href="https://www.figma.com/proto/ElWGOvMBzCul25R1kuL5CBsr/Valence?scaling=contain&node-id=60%3A237">Gaming Console Wireframes</a>
+                </li>
+            </ul>
+            <p>All wireframes were done in Figma using original icons.</p>
+        </section>
+        <section id="styleguide-container">
+            <h2>styleguide</h2>
+            <section id="interactive">
+                <h3>interactive elements</h3>
+                <div class="element-container">
+                    <h4>Navigation Button</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>.nav-button</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;a href="#" class="nav-button"&gt;About&lt;/a&gt;</code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <a href="#" class="nav-button">About</a>
+                    </div>
+                </div>
+                <div class="element-container">
+                    <h4>In-text Link</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>a</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;a href="#"&gt;link&lt;/a&gt;</code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <a href="#">link</a>
+                    </div>
+                </div>
+                <div class="element-container">
+                    <h4>Submit/Reset Button</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>button</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;button&gt;button&lt;/button&gt;</code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <button>button</button>
+                    </div>
+                </div>
+                <div class="element-container">
+                    <h4>Text Input Field</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>input</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;input type="text"&gt;search&lt;/input&gt;</code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <input type="text" placeholder="search"></input>
+                    </div>
+                </div>
             </section>
+            <section id="typography">
+                <h3>typography</h3>
+                <div class="element-container">
+                    <h4>Heading 1</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>h1</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;h1&gt;Heading 1&lt;/h1&gt;</code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <h1>Heading 1</h1>
+                    </div>
+                </div>
+                <div class="element-container">
+                    <h4>Heading 2</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>h2</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;h2&gt;link&lt;/h2&gt;</code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <h2>heading 2</h2>
+                    </div>
+                </div>
+                <div class="element-container">
+                    <h4>Heading 3</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>h3</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;h3&gt;button&lt;/h3&gt;</code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <h3>heading 3</h3>
+                    </div>
+                </div>
+                <div class="element-container" id="paragraph-container">
+                    <h4>Paragraphs</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>p</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis vitae nisl eget
+                            vulputate.&lt;/p&gt;
+                        </code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis vitae nisl eget vulputate.</p>
+                    </div>
+                </div>
+                <div class="element-container">
+                    <h4>Bulleted List</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>ul</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;ul&gt; &lt;li&gt;List Item&lt;/li&gt; &lt;li&gt;List Item&lt;/li&gt; &lt;li&gt;List Item&lt;/li&gt;
+                            &lt;/ul&gt;
+                        </code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <ul>
+                            <li>List Item</li>
+                            <li>List Item</li>
+                            <li>List Item</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="element-container">
+                    <h4>Numbered List</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>ol</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;ol&gt; &lt;li&gt;List Item&lt;/li&gt; &lt;li&gt;List Item&lt;/li&gt; &lt;li&gt;List Item&lt;/li&gt;
+                            &lt;/ol&gt;
+                        </code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <ol>
+                            <li>List Item</li>
+                            <li>List Item</li>
+                            <li>List Item</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            <!-- <section id="combined">
+                <h3>combined elements</h3>
+                <div class="element-container">
+                    <h4>Navigation</h4>
+                    <div>
+                        <h5>CSS Selector</h5>
+                        <p>.nav-button</p>
+                    </div>
+                    <div>
+                        <h5>Sample Code</h5>
+                        <code>&lt;a href="#" class="nav-button"&gt;About&lt;/a&gt;</code>
+                    </div>
+                    <div>
+                        <h5>Rendered Element</h5>
+                        <a href="#" class="nav-button">About</a>
+                    </div>
+                </div>
+            </section> -->
+        </section>
+        <section>
+            
         </section>
     </div>
 </body>
