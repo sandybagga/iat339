@@ -20,8 +20,17 @@ h3 {
     text-transform: lowercase;
 }
 
-section{
+section, nav{
     margin-bottom: 7vh;
+}
+
+nav{
+    display: grid;
+    width:100%;
+}
+
+nav a {
+    margin-right:10rem;
 }
 
 h1{
@@ -56,6 +65,7 @@ code{
     text-decoration: none;
     transition: all 0.25s ease;
     text-transform: lowercase;
+    border-bottom: 4px solid transparent;
 }
 
 .nav-button:hover, .nav-button:focus{
@@ -93,7 +103,33 @@ input{
     padding: 0.5rem;
 }
 
+#colours-container{
+    grid-template-columns: 1fr;
+}
+
+.colour-swatch{
+    height: 10rem;
+    padding: 1rem;
+}
+
+#gold{
+    background-color: gold;
+}
+
+#blue{
+    background-color: #3518F1;
+    color: white;
+}
+
 @media (min-width: 53rem){
+
+    nav{
+        grid-template-columns: repeat(3, max-content);
+    }
+
+    #phone-link {grid-column: 1;}
+    #watch-link {grid-column: 2;}
+    #console-link {grid-column: 3;}
 
     #wireframes-container ul{
         grid-template-columns: repeat(3, 1fr);
@@ -111,7 +147,8 @@ input{
         grid-column: 1 / span 3;
     }
 
-    #phone-link {grid-column: 1;}
-    #watch-link {grid-column: 2;}
-    #console-link {grid-column: 3;}
+    #colours-container{
+        grid-template-columns: 1fr 1fr;
+    }
+
 }
