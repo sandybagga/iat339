@@ -4,7 +4,7 @@ body {
 }
 
 #wrap {
-    padding: 0 3rem;
+    padding: 0 2rem;
     margin: 8vh auto;
     display: grid;
     max-width: 80rem;
@@ -184,6 +184,9 @@ input {
 }
 
 @media (min-width: 40rem) {
+    #wrap{
+        padding: 0 3rem;
+    }
     nav {
         grid-template-columns: 5rem 1fr 5rem;
     }
