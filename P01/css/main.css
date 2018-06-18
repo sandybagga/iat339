@@ -97,6 +97,10 @@ button:active{
     background: #0CBB00;
 }
 
+label{
+    display:none;
+}
+
 input{
     font-family: Roboto Mono, monospace;
     border: 2px solid black;
