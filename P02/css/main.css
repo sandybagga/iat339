@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:700|Roboto');
+body {
+    font-family: Roboto, sans-serif;
+}
+
+#wrap {
+    padding: 0 3rem;
+    margin: 8vh auto;
+    display: grid;
+    max-width: 80rem;
+    ;
+}
+
+h1, h2, h3 {
+    font-family: Roboto Mono, monospace;
+    font-weight: 700;
+    box-sizing: border-box;
+    margin: 0.5ch 0;
+    text-transform: lowercase;
+}
+
+section {
+    margin-bottom: 7vh;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 5rem;
+    align-items: center;
+}
+
+#logo {
+    height: 100%;
+}
+
+#nav-list-wrap {
+    text-align: right;
+}
+
+#nav-list * {
+    display: none;
+}
+
+#nav-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+    max-width: 60rem;
+    padding: 0;
+    margin: auto;
+}
+
+ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+#search {
+    vertical-align: center;
+    text-align: center;
+    display: none;
+}
+
+#search img {
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+#summary p {
+    max-width: 30rem;
+}
+
+#wireframes-container ul, .element-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    list-style: none;
+    padding: 0;
+}
+
+code {
+    background: #ddd;
+}
+
+.element-container {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid black;
+}
+
+.nav-button {
+    font-family: Roboto Mono, monospace;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    text-transform: lowercase;
+    border-bottom: 4px solid transparent;
+}
+
+.nav-button:hover, .nav-button:focus {
+    border-bottom: 4px solid black;
+}
+
+a:not(.nav-button) {
+    font-family: Roboto Mono, monospace;
+    color: #3518F1;
+    text-decoration: none;
+}
+
+a:not(.nav-button):hover {
+    text-decoration: underline;
+}
+
+button {
+    font-family: Roboto Mono, monospace;
+    box-sizing: border-box;
+    border: 2px solid black;
+    background: none;
+}
+
+button:hover, button:focus {
+    background: gold;
+}
+
+button:active {
+    background: #0CBB00;
+}
+
+input {
+    font-family: Roboto Mono, monospace;
+    border: 2px solid black;
+    padding: 0.5rem;
+}
+
+#colours-container {
+    grid-template-columns: 1fr;
+}
+
+.colour-swatch {
+    height: 10rem;
+    padding: 1rem;
+}
+
+#gold {
+    background-color: gold;
+}
+
+#blue {
+    background-color: #3518F1;
+    color: white;
+}
+
+@media (min-width: 40rem) {
+    nav {
+        grid-template-columns: 5rem 1fr 5rem;
+    }
+    #nav-list {
+        max-width: 50rem;
+    }
+    #phone-link {
+        grid-column: 1;
+    }
+    #watch-link {
+        grid-column: 2;
+    }
+    #console-link {
+        grid-column: 3;
+    }
+    #wireframes-container ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .element-container {
+        grid-template-columns: 1fr 4fr max-content;
+    }
+    #paragraph-container {
+        grid-template-columns: 1fr 3fr 2fr;
+    }
+    .element-container h4 {
+        grid-column: 1 / span 3;
+    }
+    #colours-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    #nav-list-wrap, #nav-list {
+        visibility: visible;
+        align-items: center;
+        text-align: center;
+    }
+    #search {
+        display: inline;
+    }
+}
+
+@media (min-width: 60rem) {
+    #nav-list * {
+        display: inline;
+    }
+    #menu {
+        display: none;
+    }
+}
