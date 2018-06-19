@@ -183,6 +183,11 @@ input {
     color: white;
 }
 
+footer{
+    height: 20vh;
+    background: #ddd;
+}
+
 @media (min-width: 40rem) {
     #wrap{
         padding: 0 3rem;
