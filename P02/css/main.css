@@ -3,7 +3,7 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -32,6 +32,10 @@ nav {
     grid-template-columns: 1fr 1fr;
     height: 5rem;
     align-items: center;
+    /* position: fixed;
+    bottom:0;
+    width: 100%;
+    background-color: white; */
 }
 
 #logo {
@@ -72,11 +76,19 @@ ul li {
 }
 
 #hero {
+    margin-top: 7vh;
+    padding: 5vw;
+    background: url("http://www.elexproject.com/sites/default/files/field/image/electronics-project.jpg") no-repeat;
     padding-top: 25vw;
-    background: no-repeat url(../img/elec.svg);
-    background-size: 50%;
+    background-color: rgb(167, 157, 236);
+    background-size: cover;
+    border: 4px solid black;
     background-blend-mode: screen;
-    background-position: right top;
+}
+
+#hero-img{
+    width: 30%;
+    align-self: right;
 }
 
 #hero-button {
@@ -195,55 +207,73 @@ footer {
     height: 20vh;
     background: #ddd;
 }
-  
-  .list-item {
-    border: 4px solid black;
-  }
 
-  .list-item .list-item-image {
+.list-item {
+    border: 4px solid black;
+}
+
+*{
+    transition: all 0.2s ease;
+}
+
+.list-item:hover{
+    background-color: #8eff80;
+}
+
+.list-item:hover > .list-item-image {
+    background-color: #8eff80;
+    background-blend-mode: luminosity;
+}
+
+.list-item .list-item-image {
     width: 100%;
+    height: 15rem;
     padding: 1rem 1rem 0;
     display: grid;
     grid-template-rows: 1fr;
     align-items: end;
-  }
-  .list-item .list-item-image img {
+    background: url("http://www.criticalcommons.org/Members/Ghent/clips/the%20chicken%20roaster.mp4/thumbnailImage") no-repeat;
+    background-size: cover;
+}
+
+.list-item .list-item-image img {
     width: inherit;
     margin: 0;
     grid-row: 1;
     grid-column: 1;
-  }
-  .list-item .list-item-image h3 {
+}
+
+.list-item .list-item-image h3 {
     grid-row: 1;
     grid-column: 1;
     margin: 0.83rem;
     color: white;
-  }
-  .list-item .list-item-content {
+}
+
+.list-item .list-item-content {
     display: grid;
     padding: 1.83rem;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
-  }
-  .list-item .list-item-content p {
+}
+
+.list-item .list-item-content p {
     margin: 0;
-  }
-  .list-item .list-item-metadata {
-    grid-column: 2;
-  }
-  .list-item .list-item-metadata * {
-    text-align: right;
+}
+
+.list-item .list-item-metadata * {
+    /* text-align: right; */
     width: 100%;
-  }
-  .list-item .list-item-metadata p {
-    font-size: 1.3rem;
-  }
-  .list-item .list-item-metadata h4 {
+}
+
+.list-item .list-item-metadata #stars {
+    font-size: 2rem;
+}
+
+.list-item .list-item-metadata h4 {
     display: inline-block;
     margin: 0;
-  }
-
-  
+}
 
 @media (min-width: 40rem) {
     #wrap {
@@ -290,10 +320,12 @@ footer {
 
 }
 
-@media (min-width: 50rem){
+@media (min-width: 50rem) {
     #project-grid {
-        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 @media (min-width: 65rem) {
@@ -303,9 +335,14 @@ footer {
     #menu {
         display: none;
     }
-    #project-grid {
-        grid-gap: 1rem;
-        grid-template-columns: repeat(2, 1fr);
+    .list-item .list-item-content {
+        grid-template-columns: 5fr 1fr;
+    }
+    .list-item .list-item-metadata {
+        grid-column: 2;
+    }
+    .list-item .list-item-metadata * {
+        text-align: right;
     }
 }
 
@@ -314,7 +351,7 @@ footer {
         padding-top: 20vw;
     }
     #project-grid {
-        grid-gap: 2rem;
+        grid-gap: 1.5rem;
         grid-template-columns: repeat(3, 1fr);
     }
 }
