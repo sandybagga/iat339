@@ -224,14 +224,7 @@ footer {
     transition: all 0.2s ease;
 }
 
-.list-item:hover{
-    background-color: #8eff80;
-}
 
-.list-item:hover > a .list-item-image {
-    background-color: #8eff80;
-    background-blend-mode: luminosity;
-}
 
 .list-item .list-item-image {
     width: 100%;
@@ -363,6 +356,14 @@ footer {
     }
     .list-item{
         min-width: 25rem;
+    }
+    .list-item:hover{
+        background-color: #8eff80;
+    }
+    
+    .list-item:hover > a .list-item-image {
+        background-color: #8eff80;
+        background-blend-mode: luminosity;
     }
 }
 
