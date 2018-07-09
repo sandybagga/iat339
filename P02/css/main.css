@@ -215,8 +215,28 @@ input {
 }
 
 footer {
-    height: 20vh;
-    background: #ddd;
+    height: 5rem;
+    background: #3518F1;
+}
+
+#footer-wrap{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(12rem, 1fr));
+}
+
+#footer-wrap div{
+    justify-self: center;
+    align-self: center;
+}
+
+#footer-wrap div a{
+    display: inline;
+}
+
+#footer-wrap h3{
+    color: white;
+    display: inline;
 }
 
 .list-item {
