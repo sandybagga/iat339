@@ -38,7 +38,7 @@ nav {
 }
 
 #menu{
-    z-index:2;
+    z-index:99;
 }
 
 #nav-list-wrap {
@@ -83,6 +83,7 @@ ul li {
     background-size: cover;
     border: 4px solid black;
     background-blend-mode: screen;
+    z-index: -99;
 }
 
 #hero-img{
@@ -350,16 +351,20 @@ footer {
 }
 
 .show-menu{
-    position: absolute;
-    top: 20vh;
+    position: fixed;
+    top: calc(8vh + 5rem);
     left: 5vw;
     right: 5vw;
     background-color: white;
+    /* z-index: 3; */
 }
 
 .show-menu *{
     display: inline-block !important;
-    padding-bottom: 1.5vh;
+}
+.show-menu li{
+    padding-top: 15vh;
+    padding-bottom: 5vh;
 }
 
 .hide{
@@ -367,8 +372,8 @@ footer {
 }
 
 .full-mobile-menu{
-    height: 100%;
-    width:100%;
+    height: 100vh;
+    width:100vw;
     position: fixed;
     top:0;
     left:0;
@@ -379,15 +384,20 @@ footer {
     justify-items: left !important;
 }
 
-.full-mobile-menu li{
-    display: block;
+.full-mobile-menu *{
+    display: inline-block !important;
 }
 
 .full-mobile-menu a{
     font-size: 4rem;
 }
 
-.fix{
+.tab-fix{
+    position: fixed;
+    top: 20vh;
+}
+
+.mobi-fix{
     position: fixed;
     top: 10vh;
     right: 8vw;
