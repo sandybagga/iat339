@@ -31,14 +31,14 @@ nav {
     grid-template-columns: 1fr 1fr;
     height: 5rem;
     align-items: center;
-    /* position: fixed;
-    bottom:0;
-    width: 100%;
-    background-color: white; */
 }
 
 #logo {
     height: 100%;
+}
+
+#menu{
+    z-index:2;
 }
 
 #nav-list-wrap {
@@ -95,15 +95,10 @@ ul li {
 }
 
 #project-grid {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    grid-template-rows: 1fr;
-    grid-gap: 2rem; */
     display:flex;
     height: fit-content;
     width: inherit;
     overflow-x: scroll;
-    
     -webkit-overflow-scrolling: touch;
 }
 
@@ -224,8 +219,6 @@ footer {
 *{
     transition: all 0.2s ease;
 }
-
-
 
 .list-item .list-item-image {
     width: 100%;
@@ -356,6 +349,48 @@ footer {
     display: none; 
 }
 
+.show-menu{
+    position: fixed;
+    top: 15vh;
+    left: 5vw;
+    right: 5vw;
+}
+
+.show-menu *{
+    display: inline-block !important;
+}
+
+.hide{
+    display:none;
+}
+
+.full-mobile-menu{
+    height: 100%;
+    width:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: white;
+    grid-template-columns: 1fr !important;
+    z-index: 1;
+    padding: 15vh 0 15vh 15vw !important;
+    justify-items: left !important;
+}
+
+.full-mobile-menu li{
+    display: block;
+}
+
+.full-mobile-menu a{
+    font-size: 4rem;
+}
+
+.fix{
+    position: fixed;
+    top: 10vh;
+    right: 8vw;
+}
+
 @media (min-width: 40rem) {
     #wrap {
         padding: 0 3rem;
@@ -417,7 +452,7 @@ footer {
     .list-item{
         min-width: 25rem;
     }
-    .list-item:hover{
+    .list-item:hover, .list-item:focus{
         background-color: #8eff80;
     }
     
