@@ -10,9 +10,8 @@ body {
 #wrap {
     padding: 0 2rem;
     margin: 8vh auto;
-    display: grid;
     max-width: 90rem;
-    ;
+
 }
 
 h1, h2, h3 {
@@ -96,9 +95,14 @@ ul li {
 }
 
 #project-grid {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    grid-gap: 2rem;
+    grid-template-rows: 1fr;
+    grid-gap: 2rem; */
+    display:flex;
+    height: fit-content;
+    width: inherit;
+    overflow-x: scroll;
 }
 
 .project {
@@ -157,6 +161,7 @@ a:not(.nav-button) {
     font-family: Roboto Mono, monospace;
     color: #3518F1;
     text-decoration: none;
+    line-height: 80%;
 }
 
 a:not(.nav-button):hover {
@@ -211,6 +216,8 @@ footer {
 .list-item {
     border: 4px solid black;
     display: block;
+    margin-right: 1.5%;
+    min-width: 22rem;
 }
 
 *{
@@ -342,7 +349,9 @@ footer {
 }
 
 @media (min-width: 50rem) {
-
+    .list-item{
+        min-width: 24rem;
+    }
 }
 
 @media (min-width: 65rem) {
@@ -352,6 +361,9 @@ footer {
     #menu {
         display: none;
     }
+    .list-item{
+        min-width: 25rem;
+    }
 }
 
 @media (min-width: 90rem) {
@@ -360,5 +372,8 @@ footer {
     }
     #project-grid {
         grid-gap: 1.5rem;
+    }
+    .list-item{
+        min-width: 28rem;
     }
 }
