@@ -103,6 +103,7 @@ ul li {
     height: fit-content;
     width: inherit;
     overflow-x: scroll;
+    
     -webkit-overflow-scrolling: touch;
 }
 
