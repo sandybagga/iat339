@@ -1,12 +1,13 @@
 var searchIsHidden;
 
-if($("#search").css("display") == "none"){
-    searchIsHidden = true;
-} else {
-    searchIsHidden = false;
-}
+
 
 $(document).ready(function () {
+    if($("#search").css("display") == "none"){
+        searchIsHidden = true;
+    } else {
+        searchIsHidden = false;
+    }
     $("#menu").click(function () {
         $("#nav-list").toggleClass("show-menu");
         if ($("#menu img").attr("src") == "img/menu.svg") {
