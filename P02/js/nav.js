@@ -3,6 +3,11 @@ var searchIsHidden;
 
 
 $(document).ready(function () {
+
+    //use window width to detect change in device width
+    //solution from https://stackoverflow.com/a/17328813
+    var width = $(window).width();
+
     if ($("#search").css("display") == "none") {
         searchIsHidden = true;
     } else {
@@ -29,11 +34,13 @@ $(document).ready(function () {
     });
     $(window).resize(function () {
 
-        //menu will reset on resize
-        $("#nav-list").removeClass("show-menu");
-        $("#nav-list").removeClass("full-mobile-menu");
-        $("#menu").removeClass("mobi-fix");
-        $("#menu img").attr("src", "img/menu.svg");
+        if ($(window).width() != width) {
+            //menu will reset on resize
+            $("#nav-list").removeClass("show-menu");
+            $("#nav-list").removeClass("full-mobile-menu");
+            $("#menu").removeClass("mobi-fix");
+            $("#menu img").attr("src", "img/menu.svg");
+        }
 
         if ($("#search").css("display") == "none") {
             searchIsHidden = true;
