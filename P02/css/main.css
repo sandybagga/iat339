@@ -350,14 +350,16 @@ footer {
 }
 
 .show-menu{
-    position: fixed;
-    top: 15vh;
+    position: absolute;
+    top: 20vh;
     left: 5vw;
     right: 5vw;
+    background-color: white;
 }
 
 .show-menu *{
     display: inline-block !important;
+    padding-bottom: 1.5vh;
 }
 
 .hide{
