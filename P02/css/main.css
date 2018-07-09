@@ -154,7 +154,9 @@ a:not(.nav-button){
     line-height: 80%;
 }
 
-a:not(.nav-button):hover, a:not(#discussion-grid a):hover{
+a:not(.nav-button):hover, a:not(#discussion-grid a):hover,
+a:not(.nav-button):active, a:not(#discussion-grid a):active,
+a:not(.nav-button):focus, a:not(#discussion-grid a):focus{
     text-decoration: underline;
 }
 
