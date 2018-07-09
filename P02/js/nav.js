@@ -53,7 +53,7 @@ $(document).ready(function () {
             $("#search").removeClass("show-search");
         }
 
-        if ($("#search").css("display") == "none") {
+        if ($("#search-container").css("display") == "none") {
             searchIsHidden = true;
             $("#search").removeClass("show-search");
         } else {
