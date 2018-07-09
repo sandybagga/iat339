@@ -250,8 +250,9 @@ footer {
     color: white;
 }
 
-.list-item a:hover{
-    text-decoration: underline;
+
+.list-item a:hover > .list-item-image *{
+    text-decoration: none;
 }
 
 .list-item .list-item-content {
@@ -347,6 +348,10 @@ footer {
 
 #discussion-view-more h3{
     display:inline-block;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 @media (min-width: 40rem) {
