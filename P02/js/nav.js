@@ -8,8 +8,9 @@ $(document).ready(function () {
     //solution from https://stackoverflow.com/a/17328813
     var width = $(window).width();
 
-    if ($("#search").css("display") == "none") {
+    if ($("#search-container").css("display") == "none") {
         searchIsHidden = true;
+        $("#search").removeClass("show-search");
     } else {
         searchIsHidden = false;
     }
@@ -26,12 +27,20 @@ $(document).ready(function () {
         }
 
         if (searchIsHidden) {
-            // $("#nav-list").toggleClass("show-menu");
             $("#nav-list").toggleClass("full-mobile-menu");
             $("#menu").toggleClass("mobi-fix");
         }
 
     });
+    $("#search-container a").click(function () {
+        $("#search").toggleClass("show-search");
+        if($("#search").hasClass("show-search")){
+            $("#search-container a img").attr("src", "img/close.svg");
+        } else {
+            $("#search-container a img").attr("src", "img/search.svg");
+        }
+    });
+
     $(window).resize(function () {
 
         if ($(window).width() != width) {
@@ -40,10 +49,13 @@ $(document).ready(function () {
             $("#nav-list").removeClass("full-mobile-menu");
             $("#menu").removeClass("mobi-fix");
             $("#menu img").attr("src", "img/menu.svg");
+            $("#search-container a img").attr("src", "img/search.svg");
+            $("#search").removeClass("show-search");
         }
 
         if ($("#search").css("display") == "none") {
             searchIsHidden = true;
+            $("#search").removeClass("show-search");
         } else {
             searchIsHidden = false;
         }
