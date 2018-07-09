@@ -1,0 +1,23 @@
+section{
+    margin-top: 7vh;
+}
+
+#active-nav-button{
+    background-color: #8eff80;
+    padding: 1rem 1.5rem;
+}
+
+#project-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+    grid-gap: 1.5rem;
+}
+
+.list-item{
+    min-width: 0;
+    margin: 0;
+}
+
+@media (min-width: 90rem) {
+
+}
