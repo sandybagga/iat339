@@ -528,7 +528,7 @@ footer {
     }
     .show-search #search {
         font-size: 1.5rem;
-        width: calc(100% - 5vw);
+        width: calc(100% - 9vw);
     }
 }
 
