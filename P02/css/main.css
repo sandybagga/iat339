@@ -213,7 +213,6 @@ input {
 }
 
 footer {
-    height: 5rem;
     background: #3518F1;
 }
 
@@ -226,6 +225,7 @@ footer {
 #footer-wrap div {
     text-align: center;
     align-self: center;
+    padding: 2.5rem 0;
 }
 
 #footer-wrap div a {
@@ -262,6 +262,9 @@ footer {
 .list-item .list-item-image#shades{ background-image: url("../img/shades-project.jpg");}
 .list-item .list-item-image#nes{ background-image: url("../img/nes-project.jpg");}
 .list-item .list-item-image#xmas{ background-image: url("../img/christmas-project.jpg");}
+.list-item .list-item-image.arduino{ background-image: url("../img/arduino-learn.png");}
+.list-item .list-item-image#solder{ background-image: url("../img/soldering-learn.jpg");}
+.list-item .list-item-image#pi{ background-image: url("../img/pi-learn.jpg");}
 
 
 .list-item .list-item-image img {
@@ -274,6 +277,7 @@ footer {
 .list-item .list-item-image h3 {
     grid-row: 1;
     grid-column: 1;
+    line-height: 110%;
     padding: 0.83rem;
     display: inline-block;
     color: white;
@@ -288,6 +292,7 @@ footer {
     display: grid;
     padding: 1.83rem;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr 3fr;
     grid-gap: 1rem;
 }
 
