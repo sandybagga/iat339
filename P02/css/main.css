@@ -89,7 +89,7 @@ ul li {
 #hero {
     margin-top: 7vh;
     padding: 5vw;
-    background: url("http://www.elexproject.com/sites/default/files/field/image/electronics-project.jpg") no-repeat;
+    background-image: url("../img/arduino-header-480.jpg");
     padding-top: 25vw;
     background-color: rgb(167, 157, 236);
     background-size: cover;
@@ -222,7 +222,7 @@ footer {
 #footer-wrap {
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(12rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
 #footer-wrap div {
@@ -384,7 +384,7 @@ footer {
     left: 5vw;
     right: 5vw;
     background-color: white;
-    /* z-index: 3; */
+    max-width: 100% !important;
 }
 
 .show-menu * {
@@ -459,6 +459,9 @@ footer {
     nav {
         grid-template-columns: 5rem 1fr max-content;
     }
+    #hero {
+        background-image: url("../img/arduino-header-960.jpg");
+    }
     #nav-list {
         max-width: 50rem;
     }
@@ -509,6 +512,9 @@ footer {
     #menu {
         display: none;
     }
+    #hero {
+        background-image: url("../img/arduino-header.jpg");
+    }
     .list-item {
         min-width: 25rem;
     }
@@ -535,6 +541,7 @@ footer {
 @media (min-width: 90rem) {
     #hero {
         padding-top: 20vw;
+       
     }
     #project-grid {
         grid-gap: 1.5rem;
