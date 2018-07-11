@@ -21,7 +21,7 @@ h1, h2, h3 {
     text-transform: lowercase;
 }
 
-section {
+section, header {
     margin-bottom: 7vh;
 }
 
@@ -57,7 +57,6 @@ nav {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
-    justify-items: center;
     max-width: 60rem;
     padding: 0;
     margin: auto;
@@ -100,14 +99,9 @@ ul li {
 
 #hero-img {
     width: 30%;
-    align-self: right;
 }
 
-#hero-button {
-    margin-top: 1rem;
-}
-
-#project-grid {
+.project-grid {
     display: flex;
     height: fit-content;
     width: inherit;
@@ -117,7 +111,6 @@ ul li {
 
 h1 {
     font-size: 2.5rem;
-    text-shadow: 2px 2px #0CBB00;
 }
 
 #summary p {
@@ -167,27 +160,32 @@ a:not(.nav-button):hover, a:not(#discussion-grid a):hover, a:not(.nav-button):ac
 }
 
 #hero-button {
+    display: inline-block;
+    margin-top: 1rem;
     font-family: Roboto Mono, monospace;
     box-sizing: border-box;
     border: 2px solid black;
     background: none;
-    padding: 0.5em 1em;
+    padding: 0.83em 1em;
 }
 
 #hero-button:hover, #hero-button:focus {
     background: gold;
+    text-decoration: none;
 }
 
 #hero-button:active {
     background: #0CBB00;
 }
 
-#hero-button a {
+#hero-button {
     color: black;
 }
 
-#hero-button a:hover {
-    text-decoration: none;
+#hero h1, #hero h3{
+    max-width: fit-content;
+    padding: 0.5rem 0.83rem;
+    background-color: gold;
 }
 
 input {
@@ -226,7 +224,7 @@ footer {
 }
 
 #footer-wrap div {
-    justify-self: center;
+    text-align: center;
     align-self: center;
 }
 
@@ -257,9 +255,14 @@ footer {
     display: grid;
     grid-template-rows: 1fr;
     align-items: end;
-    background: url("http://www.criticalcommons.org/Members/Ghent/clips/the%20chicken%20roaster.mp4/thumbnailImage") no-repeat;
     background-size: cover;
 }
+
+.list-item .list-item-image#seinfeld{ background-image: url("../img/seinfeld-project.png");}
+.list-item .list-item-image#shades{ background-image: url("../img/shades-project.jpg");}
+.list-item .list-item-image#nes{ background-image: url("../img/nes-project.jpg");}
+.list-item .list-item-image#xmas{ background-image: url("../img/christmas-project.jpg");}
+
 
 .list-item .list-item-image img {
     width: inherit;
@@ -271,8 +274,10 @@ footer {
 .list-item .list-item-image h3 {
     grid-row: 1;
     grid-column: 1;
-    margin: 0.83rem;
+    padding: 0.83rem;
+    display: inline-block;
     color: white;
+    background-color: #3518F1;
 }
 
 .list-item a:hover>.list-item-image * {
@@ -296,7 +301,7 @@ footer {
     width: 100%;
 }
 
-.list-item .list-item-metadata #stars {
+.list-item .list-item-metadata .stars {
     font-size: 2rem;
 }
 
@@ -410,7 +415,7 @@ footer {
     grid-template-columns: 1fr !important;
     z-index: 1;
     padding: 15vh 0 15vh 15vw !important;
-    justify-items: left !important;
+    text-align: left;
 }
 
 .full-mobile-menu * {
@@ -543,7 +548,7 @@ footer {
         padding-top: 20vw;
        
     }
-    #project-grid {
+    .project-grid {
         grid-gap: 1.5rem;
     }
     .list-item {
