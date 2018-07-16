@@ -1,12 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Markazi+Text:700');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700');
-
-$content-color: rgb(0, 52, 92);
+$content-color: rgb(0,
+52,
+92);
 $background-color: #FDFDF6;
-$faded-color: rgba(0, 52, 92, 0.8);
-
-$serif: 'Markazi Text', Georgia, 'Times New Roman', Times, serif;
-$sans-serif: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$faded-color: rgba(0,
+52,
+92,
+0.8);
+$logo-width: 4rem;
+$logo-padding: calc( #{$logo-width} / 4);
+$logo-border: calc( #{$logo-padding} / 2);
+$serif: 'Markazi Text',
+Georgia,
+'Times New Roman',
+Times,
+serif;
+$sans-serif: 'IBM Plex Sans',
+-apple-system,
+BlinkMacSystemFont,
+'Segoe UI',
+Roboto,
+Oxygen,
+Ubuntu,
+Cantarell,
+'Open Sans',
+'Helvetica Neue',
+sans-serif;
+::-webkit-scrollbar {
+    display: none;
+}
 
 * {
     font-family: $sans-serif;
@@ -14,9 +37,6 @@ $sans-serif: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Rob
     background-color: $background-color;
 }
 
-$logo-width: 4rem;
-$logo-padding: calc( #{$logo-width} / 4);
-$logo-border: calc( #{$logo-padding} / 2);
 h1,
 h2,
 h3 {
@@ -25,7 +45,9 @@ h3 {
     display: inline-block;
     margin: 0.5em 0 0;
     color: $content-color;
-    font-family: $serif}
+    font-family: $serif;
+    line-height: 80%;
+}
 
 h1 {
     font-size: 2.85rem;
@@ -39,51 +61,59 @@ h3 {
     font-size: 1.5rem;
 }
 
-ul, ol{
+ul,
+ol {
     margin: 0;
     padding: 0;
     list-style-position: inside;
-    li{
+    li {
         font-size: 1rem;
     }
 }
 
-ul {list-style-type: disc;}
-ol {list-style-type: decimal;}
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
 
 p {
     font-size: 1rem;
     margin: 0;
 }
 
-a{
+a:not(.nav-link) {
     font-weight: 700;
     color: $content-color;
     text-decoration: none;
     font-family: $serif;
     font-size: 1.25em;
-    &:hover, &:active{
+    &:hover,
+    &:active {
         text-decoration: underline;
     }
 }
 
-.nav-link{
+.nav-link {
     font-size: 2rem;
     font-family: $serif;
     text-transform: capitalize;
     font-weight: 700;
     color: $content-color;
     text-decoration: none;
-    border-bottom: calc(#{$logo-border}/2) solid $background-color;
+    border-bottom: calc(#{$logo-border} / 2) solid $background-color;
     width: fit-content;
-    &:hover, &:active{
+    &:hover,
+    &:active {
         border-color: $content-color;
     }
 }
 
 code {
     background-color: $faded-color;
-    width:fit-content;
+    width: fit-content;
     padding: 0.5ch 1ch;
     color: $background-color;
     border-radius: 0.15rem;
@@ -106,38 +136,75 @@ code {
     }
 }
 
-section{
+section,
+header {
     margin: 5vh 0;
-    .section-headings{
-        // grid-column: 1 / span 3;
+    .section-headings {
         border-top: $logo-border solid $content-color;
-        width: calc( #{$logo-width} + (#{$logo-padding} * 3));
+        width: calc( #{$logo-width} + ( #{$logo-padding} * 3));
         padding-top: 1rem;
         line-height: 1em;
     }
 }
 
-#typography-grid, #interactive-grid {
+nav {
+    display: grid;
+}
+
+header {
+    background-color: $content-color;
+    background-image: url("../img/makercube.jpg");
+    background-size: cover;
+    background-blend-mode: multiply;
+    align-content: space-between;
+    display: grid;
+    padding: 3rem;
+    grid-gap: 3vw;
+    * {
+        background-color: unset;
+        color: $background-color;
+    }
+    .header-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        h1 {
+            grid-column: 1 / span 3;
+        }
+        p {
+            margin-top: 1rem;
+            grid-column: 1 / span 1;
+        }
+    }
+    .metadata-grid {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+}
+
+#typography-grid,
+#interactive-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     grid-gap: 2rem 5rem;
     margin-top: 3vh;
     .type-item {
         width: inherit;
-        display:grid;
+        display: grid;
         align-content: space-between;
         *:not(li) {
             display: block;
             margin-bottom: 0.5rem;
         }
-        &#paragraph{
+        &#paragraph {
             padding-right: 6ch;
         }
-        .type-element-name{
+        .type-element-name {
             color: $faded-color;
         }
-        &#in-text-link{
-            p, a{
+        &#in-text-link {
+            p,
+            a {
                 display: inline-block;
             }
         }
