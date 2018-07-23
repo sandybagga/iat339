@@ -99,7 +99,7 @@ code {
   border-radius: 0.15rem;
 }
 
-#main-wrap {
+.main-wrap {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -109,10 +109,17 @@ code {
   padding: 10vh 5vw;
 }
 
+.main-wrap#home-wrap {
+  -ms-grid-columns: (minmax(fit-content, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(-webkit-fit-content, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(fit-content, 1fr));
+}
+
 #logo-wrap {
   max-width: 4rem;
   padding: calc( 4rem / 4);
   border: calc( calc( 4rem / 4) / 2) solid #00345c;
+  font-size: unset;
 }
 
 #logo-wrap svg {
@@ -127,7 +134,7 @@ header {
 section .section-headings,
 header .section-headings {
   border-top: calc( calc( 4rem / 4) / 2) solid #00345c;
-  width: calc( 4rem + ( calc( 4rem / 4) * 3));
+  width: calc( 4rem+( calc( 4rem / 4) * 3));
   padding-top: 1rem;
   line-height: 1em;
 }
@@ -137,8 +144,16 @@ nav {
   display: grid;
 }
 
+nav ul {
+  margin-top: 3vh;
+}
+
+nav ul li {
+  list-style: none;
+}
+
 header {
-  background-image: url("../img/makercube.png");
+  background-image: url("../img/makercube2.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right top;
@@ -178,8 +193,7 @@ header .header-content p {
 header .header-content * {
   padding: 1rem;
   color: #00345c;
-  background-color: rgba(253, 253, 246, 0.95);
-  border: 2px solid #00345c;
+  background-color: white;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -198,10 +212,10 @@ header .metadata-grid * {
   color: #fdfdf6;
 }
 
-header .metadata-grid h3, header .metadata-grid li {
+header .metadata-grid h3,
+header .metadata-grid li {
   color: #00345c;
-  background-color: rgba(253, 253, 246, 0.95);
-  border: 2px solid #00345c;
+  background-color: white;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -211,6 +225,25 @@ header .metadata-grid h3, header .metadata-grid li {
 
 header .metadata-grid li {
   padding-right: 0.75rem;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 40ch;
+}
+
+main h1 {
+  font-size: 4rem;
+}
+
+main p {
+  margin: 3vh auto 0;
 }
 
 #typography-grid,

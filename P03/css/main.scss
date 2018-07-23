@@ -3,8 +3,13 @@
 $content-color: rgb(0,
 52,
 92);
-$background-color: rgb(253, 253, 246);
-$faded-background: rgba(253, 253, 246, 0.95);
+$background-color: rgb(253,
+253,
+246);
+$faded-background: rgba(253,
+253,
+246,
+0.95);
 $faded-color: rgba(0,
 52,
 92,
@@ -120,18 +125,23 @@ code {
     border-radius: 0.15rem;
 }
 
-#main-wrap {
+.main-wrap {
     display: grid;
     grid-template-columns: 1fr;
     max-width: 80rem;
     margin: 0 auto;
     padding: 10vh 5vw;
+    &#home-wrap{
+        grid-template-columns: repeat(auto-fit, minmax(fit-content, 1fr));
+        
+    }
 }
 
 #logo-wrap {
     max-width: $logo-width;
     padding: $logo-padding;
     border: $logo-border solid $content-color;
+    font-size: unset;
     svg {
         fill: $content-color;
     }
@@ -142,7 +152,7 @@ header {
     margin: 5vh 0;
     .section-headings {
         border-top: $logo-border solid $content-color;
-        width: calc( #{$logo-width} + ( #{$logo-padding} * 3));
+        width: calc( #{$logo-width}+( #{$logo-padding} * 3));
         padding-top: 1rem;
         line-height: 1em;
     }
@@ -150,10 +160,16 @@ header {
 
 nav {
     display: grid;
+    ul {
+        margin-top: 3vh;
+        li{
+        list-style: none;
+        }
+    }
 }
 
 header {
-    background-image: url("../img/makercube.png");
+    background-image: url("../img/makercube2.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right top;
@@ -164,7 +180,6 @@ header {
     grid-gap: 3vw;
     * {
         background-color: unset;
-        
     }
     .header-content {
         display: grid;
@@ -176,11 +191,10 @@ header {
             margin-top: 1rem;
             grid-column: 1 / span 1;
         }
-        *{
+        * {
             padding: 1rem;
             color: $content-color;
-            background-color: $faded-background;
-            border: 2px solid $content-color;
+            background-color: white;
             width: fit-content;
         }
     }
@@ -189,21 +203,34 @@ header {
         grid-gap: 1rem;
         margin-top: 3vh;
         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-        *{
+        * {
             color: $background-color;
         }
-        h3, li{
+        h3,
+        li {
             color: $content-color;
-            background-color: $faded-background;
-            border: 2px solid $content-color;
+            background-color: white;
             width: fit-content;
             margin-top: -2px;
             padding: 0.4rem;
         }
-        li{
+        li {
             padding-right: 0.75rem;
         }
     }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: 4rem;
+    }
+    p{
+        margin: 3vh auto 0;
+    }
+    max-width: 40ch;
+    
 }
 
 #typography-grid,
