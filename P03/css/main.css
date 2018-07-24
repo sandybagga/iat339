@@ -115,6 +115,59 @@ code {
       grid-template-columns: repeat(auto-fit, minmax(fit-content, 1fr));
 }
 
+.main-wrap#home-wrap #projects {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-gap: 5vw;
+}
+
+.main-wrap#home-wrap #projects * {
+  display: block;
+}
+
+.main-wrap#home-wrap #projects .project {
+  height: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.main-wrap#home-wrap #projects #makercube-home {
+  background-image: url("../img/IPHONE EXPORT.png");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.main-wrap#home-wrap #projects #makercube-home * {
+  background-color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5em;
+}
+
+.main-wrap#home-wrap #projects #makercube-home h3 {
+  margin-top: 0;
+}
+
+.main-wrap#home-wrap #projects #makercube-home:hover, .main-wrap#home-wrap #projects #makercube-home:focus {
+  background-image: url("../img/IPHONE EXPORT_hover.png");
+}
+
+.main-wrap#home-wrap #projects #makercube-home:hover *, .main-wrap#home-wrap #projects #makercube-home:focus * {
+  text-decoration: none;
+}
+
 #logo-wrap {
   max-width: 4rem;
   padding: calc( 4rem / 4);
@@ -129,14 +182,6 @@ code {
 section,
 header {
   margin: 5vh 0;
-}
-
-section .section-headings,
-header .section-headings {
-  border-top: calc( calc( 4rem / 4) / 2) solid #00345c;
-  width: calc( 4rem+( calc( 4rem / 4) * 3));
-  padding-top: 1rem;
-  line-height: 1em;
 }
 
 nav {
@@ -154,15 +199,14 @@ nav ul li {
 
 header {
   background-image: url("../img/makercube2.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: right top;
   background-color: unset;
   -ms-flex-line-pack: justify;
       align-content: space-between;
   display: -ms-grid;
   display: grid;
-  padding: 5vh 5vw 5vh 0;
+  padding: 5vh 5vw;
   grid-gap: 3vw;
 }
 
@@ -225,6 +269,40 @@ header .metadata-grid li {
 
 header .metadata-grid li {
   padding-right: 0.75rem;
+}
+
+section .section-headings {
+  border-top: calc( calc( 4rem / 4) / 2) solid #00345c;
+  width: calc( 4rem + ( calc( 4rem / 4) * 3));
+  padding-top: 1rem;
+  line-height: 1em;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+}
+
+section .section-content {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1vh;
+  -ms-grid-columns: (minmax(40ch, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(40ch, 1fr));
+  margin-top: 2vh;
+}
+
+section .section-content figure {
+  background-image: url("../img/bgdot.gif");
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
+  margin: 0;
+  padding: 1em;
+}
+
+section .section-content figure img {
+  width: 80%;
 }
 
 main {

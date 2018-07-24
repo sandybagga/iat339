@@ -131,9 +131,42 @@ code {
     max-width: 80rem;
     margin: 0 auto;
     padding: 10vh 5vw;
-    &#home-wrap{
+    &#home-wrap {
         grid-template-columns: repeat(auto-fit, minmax(fit-content, 1fr));
-        
+        #projects{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+            grid-gap: 5vw;
+            *{
+                display:block;
+            }
+            .project{
+                height:15rem;
+                display:flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+            #makercube-home{
+                background-image: url('../img/IPHONE\ EXPORT.png');
+                background-size: contain;
+                background-position: right;
+                background-repeat: no-repeat;
+                *{
+                    background-color: white;                    
+                    width: fit-content;
+                    padding: 0.5em;
+                }
+                h3{
+                    margin-top: 0;
+                }
+                &:hover, &:focus{
+                    background-image: url('../img/IPHONE\ EXPORT_hover.png');
+                    
+                        *{text-decoration: none;}
+                    
+                }
+            }
+        }
     }
 }
 
@@ -150,33 +183,26 @@ code {
 section,
 header {
     margin: 5vh 0;
-    .section-headings {
-        border-top: $logo-border solid $content-color;
-        width: calc( #{$logo-width}+( #{$logo-padding} * 3));
-        padding-top: 1rem;
-        line-height: 1em;
-    }
 }
 
 nav {
     display: grid;
     ul {
         margin-top: 3vh;
-        li{
-        list-style: none;
+        li {
+            list-style: none;
         }
     }
 }
 
 header {
     background-image: url("../img/makercube2.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: right top;
     background-color: unset;
     align-content: space-between;
     display: grid;
-    padding: 5vh 5vw 5vh 0;
+    padding: 5vh 5vw;
     grid-gap: 3vw;
     * {
         background-color: unset;
@@ -220,17 +246,42 @@ header {
     }
 }
 
+section {
+    .section-headings {
+        border-top: $logo-border solid $content-color;
+        width: calc( #{$logo-width} + ( #{$logo-padding} * 3));
+        padding-top: 1rem;
+        line-height: 1em;
+        grid-column: 1 / span 2;
+    }
+    .section-content {
+        display: grid;
+        grid-gap: 1vh;
+        grid-template-columns: repeat(auto-fill, minmax(40ch, 1fr));
+        margin-top: 2vh;
+        figure{
+            background-image: url('../img/bgdot.gif');
+            align-self: stretch;
+            justify-self: stretch;
+            margin:0;
+            padding: 1em;
+            img{
+                width: 80%;
+            }
+        }
+    }
+}
+
 main {
     display: flex;
     flex-direction: column;
-    h1{
+    h1 {
         font-size: 4rem;
     }
-    p{
+    p {
         margin: 3vh auto 0;
     }
     max-width: 40ch;
-    
 }
 
 #typography-grid,
