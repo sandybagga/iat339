@@ -98,7 +98,7 @@ a:not(.nav-link) {
     font-size: 1.25em;
     &:hover,
     &:active {
-        text-decoration: underline;
+        text-decoration: wavy;
     }
 }
 
@@ -145,10 +145,7 @@ code {
                 display:flex;
                 flex-direction: column;
                 justify-content: flex-end;
-            }
-            #makercube-home{
-                background-image: url('../img/IPHONE\ EXPORT.png');
-                background-size: contain;
+                
                 background-position: right;
                 background-repeat: no-repeat;
                 *{
@@ -158,13 +155,22 @@ code {
                 }
                 h3{
                     margin-top: 0;
+                    padding-top:0;
                 }
+            }
+            #makercube-home{
+                background-image: url('../img/IPHONE\ EXPORT.png');
+                background-size: contain;
                 &:hover, &:focus{
                     background-image: url('../img/IPHONE\ EXPORT_hover.png');
                     
                         *{text-decoration: none;}
                     
                 }
+            }
+            #visier-home{
+                background-image: url('../img/visier_wfm.png');
+                background-size: cover;
             }
         }
     }
@@ -199,6 +205,7 @@ header {
     background-image: url("../img/makercube2.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     background-color: unset;
     align-content: space-between;
     display: grid;

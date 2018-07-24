@@ -69,7 +69,8 @@ a:not(.nav-link) {
 }
 
 a:not(.nav-link):hover, a:not(.nav-link):active {
-  text-decoration: underline;
+  -webkit-text-decoration: wavy;
+          text-decoration: wavy;
 }
 
 .nav-link {
@@ -139,16 +140,11 @@ code {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-}
-
-.main-wrap#home-wrap #projects #makercube-home {
-  background-image: url("../img/IPHONE EXPORT.png");
-  background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
 }
 
-.main-wrap#home-wrap #projects #makercube-home * {
+.main-wrap#home-wrap #projects .project * {
   background-color: white;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -156,8 +152,14 @@ code {
   padding: 0.5em;
 }
 
-.main-wrap#home-wrap #projects #makercube-home h3 {
+.main-wrap#home-wrap #projects .project h3 {
   margin-top: 0;
+  padding-top: 0;
+}
+
+.main-wrap#home-wrap #projects #makercube-home {
+  background-image: url("../img/IPHONE EXPORT.png");
+  background-size: contain;
 }
 
 .main-wrap#home-wrap #projects #makercube-home:hover, .main-wrap#home-wrap #projects #makercube-home:focus {
@@ -166,6 +168,11 @@ code {
 
 .main-wrap#home-wrap #projects #makercube-home:hover *, .main-wrap#home-wrap #projects #makercube-home:focus * {
   text-decoration: none;
+}
+
+.main-wrap#home-wrap #projects #visier-home {
+  background-image: url("../img/visier_wfm.png");
+  background-size: cover;
 }
 
 #logo-wrap {
@@ -201,6 +208,7 @@ header {
   background-image: url("../img/makercube2.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   background-color: unset;
   -ms-flex-line-pack: justify;
       align-content: space-between;
