@@ -274,12 +274,12 @@ header {
 section {
     .section-headings {
         border-top: $logo-border solid $content-color;
-        width: calc( #{$logo-width} + ( #{$logo-padding} * 3));
+        width: calc( #{$logo-width}+( #{$logo-padding} * 3));
         padding-top: 1rem;
         line-height: 1em;
         grid-column: 1 / span 2;
     }
-    p{
+    p {
         max-width: 25rem;
     }
     .section-content {
@@ -297,9 +297,11 @@ section {
         .img {
             grid-area: img;
             padding: 1rem;
-            max-width: 30rem;
             background-image: url("../img/bgdot.gif");
             height: fit-content;
+            width: max-content;
+            width: -webkit-fill-available;
+            margin: 2em auto;
             figcaption {
                 width: fit-content;
                 padding: 0.8em;
@@ -313,13 +315,12 @@ section {
             }
         }
         @media screen and (min-width: 50rem) {
-            grid-template-areas: "p1 p1 . ."
-            "img img p2 p2";
-            .img{
-                max-width: unset;
+            grid-template-areas: "p1 p1 . ." "img img p2 p2";
+            .img {
+                width: unset;
+                margin: initial;
             }
         }
-
         @media screen and (min-width: 80rem) {
             grid-template-areas: "p1 . . ." "p2 . img img" ". . img img";
             grid-template-columns: 4fr 1vw 3fr 4fr;

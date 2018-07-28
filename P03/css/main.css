@@ -302,7 +302,7 @@ header .metadata-grid li {
 
 section .section-headings {
   border-top: calc( calc( 4rem / 4) / 2) solid #00345c;
-  width: calc( 4rem + ( calc( 4rem / 4) * 3));
+  width: calc( 4rem+( calc( 4rem / 4) * 3));
   padding-top: 1rem;
   line-height: 1em;
   -ms-grid-column: 1;
@@ -342,11 +342,15 @@ section .section-content .img {
   -ms-grid-column: 1;
   grid-area: img;
   padding: 1rem;
-  max-width: 30rem;
   background-image: url("../img/bgdot.gif");
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  width: -webkit-fill-available;
+  margin: 2em auto;
 }
 
 section .section-content .img figcaption {
@@ -368,10 +372,11 @@ section .section-content .img figcaption span {
 
 @media screen and (min-width: 50rem) {
   section .section-content {
-        grid-template-areas: "p1 p1 . ." "img img p2 p2";
+        grid-template-areas: "p1 p1 . ." "img img p2 p2";
   }
   section .section-content .img {
-    max-width: unset;
+    width: unset;
+    margin: initial;
   }
 }
 
