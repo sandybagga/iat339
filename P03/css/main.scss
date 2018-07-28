@@ -251,7 +251,7 @@ header {
         display: grid;
         grid-gap: 1rem;
         margin-top: 3vh;
-        margin-bottom: 2vh;
+        margin-bottom: 2vmax;
         grid-column: 2 / span 3;
         grid-row: 2;
         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
