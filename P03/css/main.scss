@@ -37,10 +37,13 @@ sans-serif;
     display: none;
 }
 
+body{
+    background-color: $background-color;
+}
+
 * {
     font-family: $sans-serif;
     transition: all 0.25s ease;
-    background-color: $background-color;
 }
 
 h1,
@@ -129,6 +132,7 @@ code {
     max-width: 80rem;
     margin: 0 auto;
     padding: 10vh 5vw;
+    background-color: $background-color;
     &#home-wrap {
         max-width:unset;
         // padding:unset;
@@ -168,6 +172,7 @@ code {
             }
             a{
                 font-size: 4.5vmax;
+                border-width: 1.2vh;
             }
             .project {
                 height: 15rem;
@@ -212,6 +217,7 @@ code {
     border: $logo-border solid $content-color;
     font-size: unset;
     background-color: unset;
+    pointer-events: none;
     // position: fixed;
     // mix-blend-mode: hard-light;
     svg {
