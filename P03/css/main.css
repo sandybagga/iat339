@@ -56,7 +56,7 @@ ol {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.12rem;
   margin: 0;
 }
 
@@ -101,13 +101,45 @@ code {
 }
 
 .main-wrap {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
   max-width: 80rem;
   margin: 0 auto;
   padding: 10vh 5vw;
+}
+
+.main-wrap#home-wrap {
+  max-width: unset;
+  margin: unset;
+}
+
+.main-wrap#home-wrap #home-main {
+  max-width: unset;
+}
+
+.main-wrap#home-wrap #home-main h1 {
+  font-size: 8vmax;
+  text-transform: unset;
+  line-height: 1em;
+  margin-top: 0;
+}
+
+.main-wrap#home-wrap #home-main p {
+  font-family: "Markazi Text", Georgia, "Times New Roman", Times, serif;
+  font-size: 6vmax;
+}
+
+.main-wrap#home-wrap #logo-wrap {
+  top: 6vh;
+  left: 4vw;
+  width: 30%;
+  position: fixed;
+  mix-blend-mode: difference;
+  border-color: #00345c;
+  border-width: 3vw;
+  padding: 4vw;
+}
+
+.main-wrap#home-wrap #logo-wrap svg {
+  fill: #00345c;
 }
 
 .main-wrap#home-wrap #projects {
@@ -120,6 +152,10 @@ code {
 
 .main-wrap#home-wrap #projects * {
   display: block;
+}
+
+.main-wrap#home-wrap #projects a {
+  font-size: 4.5vmax;
 }
 
 .main-wrap#home-wrap #projects .project {
@@ -175,6 +211,7 @@ code {
   padding: calc( 4rem / 4);
   border: calc( calc( 4rem / 4) / 2) solid #00345c;
   font-size: unset;
+  background-color: unset;
 }
 
 #logo-wrap svg {
@@ -204,105 +241,98 @@ header {
   background-image: url("../img/makercube/makercube2.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
   background-color: unset;
   -ms-flex-line-pack: justify;
       align-content: space-between;
   display: -ms-grid;
   display: grid;
+      grid-template-areas: "c" "m1" "m2" "m3" "m4";
+  grid-gap: 2vmin 1vmax;
   padding: 5vh 5vw;
-  grid-row-gap: 2vmin;
-  -ms-grid-columns: 2vw 1fr 5fr;
-      grid-template-columns: 2vw 1fr 5fr;
 }
 
 header * {
   background-color: unset;
 }
 
-header #back-matte {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1 / span 2;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  mix-blend-mode: overlay;
-}
-
-header #back-matte #cube-logo {
-  fill: red;
-}
-
 header .header-content {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  grid-gap: 1rem;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
-  grid-column: 2 / span 3;
   -ms-grid-row: 1;
-  grid-row: 1;
-}
-
-header .header-content h1 {
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / span 3;
+  grid-area: c;
+  max-width: 50ch;
+  margin-bottom: 5vmin;
 }
 
-header .header-content p {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1 / span 1;
-}
-
-header .header-content * {
+header .header-content h1,
+header .header-content #project-desc {
   padding: 1rem;
   color: #00345c;
-  background-color: rgba(253, 253, 246, 0.95);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  background-color: white;
+  margin: 0.2rem 0;
 }
 
-header .metadata-grid {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 1rem;
-  margin-top: 3vh;
-  margin-bottom: 2vmax;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
-  grid-column: 2 / span 3;
+header .metadata {
+  max-width: 40ch;
+}
+
+header .metadata#roles {
   -ms-grid-row: 2;
-  grid-row: 2;
-  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  -ms-grid-column: 1;
+  grid-area: m1;
 }
 
-header .metadata-grid * {
-  color: #fdfdf6;
+header .metadata#tools {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: m2;
 }
 
-header .metadata-grid h3,
-header .metadata-grid li {
+header .metadata#skills {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: m3;
+}
+
+header .metadata#team {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: m4;
+}
+
+header .metadata * {
+  display: inline;
+  line-height: 1.75em;
+  margin: 0.2em 0;
+}
+
+header .metadata p {
+  color: white;
+  display: inline;
+}
+
+header .metadata h3 {
   color: #00345c;
-  background-color: rgba(253, 253, 246, 0.95);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0.4rem;
+  padding: 0.2em;
+  background-color: white;
+  margin-top: 0;
 }
 
-header .metadata-grid li {
-  padding-right: 0.75rem;
+@media screen and (min-width: 50rem) {
+  header {
+        grid-template-areas: "c c" "m1 m2" "m3 m4";
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  header {
+        grid-template-areas: "c c . ." "m1 m2 m3 m4";
+  }
 }
 
 section .section-headings {
   border-top: calc( calc( 4rem / 4) / 2) solid #00345c;
-  width: calc( 4rem+( calc( 4rem / 4) * 3));
+  width: calc( 4rem + ( calc( 4rem / 4) * 3));
   padding-top: 1rem;
   line-height: 1em;
   -ms-grid-column: 1;
@@ -310,15 +340,11 @@ section .section-headings {
   grid-column: 1 / span 2;
 }
 
-section p {
-  max-width: 25rem;
-}
-
 section .section-content {
   display: -ms-grid;
   display: grid;
-  grid-gap: 1vh;
-      grid-template-areas: "p1" "img" "p2";
+  grid-gap: 4vmin;
+      grid-template-areas: "p1" "img" "p2" "links";
   margin-top: 2vh;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -370,9 +396,15 @@ section .section-content .img figcaption span {
   font-size: 1.25em;
 }
 
+section .section-content .links {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: links;
+}
+
 @media screen and (min-width: 50rem) {
   section .section-content {
-        grid-template-areas: "p1 p1 . ." "img img p2 p2";
+        grid-template-areas: "p1 p1 . links" "img img p2 p2";
   }
   section .section-content .img {
     width: unset;
@@ -382,9 +414,9 @@ section .section-content .img figcaption span {
 
 @media screen and (min-width: 80rem) {
   section .section-content {
-        grid-template-areas: "p1 . . ." "p2 . img img" ". . img img";
-    -ms-grid-columns: 4fr 1vw 3fr 4fr;
-        grid-template-columns: 4fr 1vw 3fr 4fr;
+        grid-template-areas: "p1 . . ." "p2 . img img" "links . img img";
+    -ms-grid-columns: 5fr 1vw 3fr 4fr;
+        grid-template-columns: 5fr 1vw 3fr 4fr;
     -ms-grid-rows: 1fr 3fr 3fr;
         grid-template-rows: 1fr 3fr 3fr;
   }

@@ -86,7 +86,7 @@ ol {
 }
 
 p {
-    font-size: 1rem;
+    font-size: 1.12rem;
     margin: 0;
 }
 
@@ -126,18 +126,48 @@ code {
 }
 
 .main-wrap {
-    display: grid;
-    grid-template-columns: 1fr;
     max-width: 80rem;
     margin: 0 auto;
     padding: 10vh 5vw;
     &#home-wrap {
+        max-width:unset;
+        // padding:unset;
+        margin: unset;
+        #home-main{
+            max-width: unset;
+            h1{
+                font-size: 8vmax;
+                text-transform: unset;
+                line-height: 1em;
+                margin-top: 0;
+            }
+            p{
+                font-family: $serif;
+                font-size: 6vmax;
+            }
+        }
+        #logo-wrap{
+            top: 6vh;
+            left: 4vw;
+            width: 30%;
+            position: fixed;
+            mix-blend-mode: difference;
+            border-color: $content-color;
+            border-width: 3vw;
+            padding: 4vw;
+            svg{
+                fill: $content-color;
+            }
+        }
         #projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
             grid-gap: 3vw;
             * {
                 display: block;
+            }
+            a{
+                font-size: 4.5vmax;
             }
             .project {
                 height: 15rem;
@@ -180,8 +210,10 @@ code {
     width: $logo-width;
     padding: $logo-padding;
     border: $logo-border solid $content-color;
-    font-size: unset; // background-color: unset;
+    font-size: unset;
+    background-color: unset;
     // position: fixed;
+    // mix-blend-mode: hard-light;
     svg {
         fill: $content-color;
         background-color: unset;
@@ -210,82 +242,74 @@ header {
     background-image: url("../img/makercube/makercube2.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     background-color: unset;
     align-content: space-between;
     display: grid;
+    grid-template-areas: "c" "m1" "m2" "m3" "m4";
+    grid-gap: 2vmin 1vmax;
     padding: 5vh 5vw;
-    grid-row-gap: 2vmin;
-    grid-template-columns: 2vw 1fr 5fr;
     * {
         background-color: unset;
     }
-    #back-matte {
-        grid-column: 1 / span 2;
-        grid-row: 1;
-        mix-blend-mode: overlay;
-        #cube-logo {
-            fill: red;
-        }
-    }
     .header-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-        grid-gap: 1rem;
-        grid-column: 2 / span 3;
-        grid-row: 1;
-        h1 {
-            grid-column: 1 / span 3;
-        }
-        p {
-            grid-column: 1 / span 1;
-        }
-        * {
+        grid-area: c;
+        max-width: 50ch;
+        margin-bottom: 5vmin;
+        h1,
+        #project-desc {
             padding: 1rem;
             color: $content-color;
-            background-color: $faded-background;
-            width: fit-content;
+            background-color: white;
+            margin: 0.2rem 0;
         }
     }
-    .metadata-grid {
-        display: grid;
-        grid-gap: 1rem;
-        margin-top: 3vh;
-        margin-bottom: 2vmax;
-        grid-column: 2 / span 3;
-        grid-row: 2;
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    .metadata {
+        max-width: 40ch;
+        &#roles{grid-area: m1;}
+        &#tools{grid-area: m2;}
+        &#skills{grid-area: m3;}
+        &#team{grid-area: m4;}
         * {
-            color: $background-color;
+            display: inline;
+            line-height: 1.75em;
+            margin: 0.2em 0;
         }
-        h3,
-        li {
+        p {
+            color: white;
+            display: inline;
+        }
+        h3 {
             color: $content-color;
-            background-color: $faded-background;
-            width: fit-content;
-            padding: 0.4rem;
+            padding: 0.2em;
+            background-color: white;
+            margin-top: 0;
         }
-        li {
-            padding-right: 0.75rem;
-        }
+    }
+    @media screen and (min-width:50rem) {
+        grid-template-areas: "c c" "m1 m2" "m3 m4";
+        // grid-auto-rows: 1fr;
+    }
+    @media screen and (min-width:80rem) {
+        grid-template-areas: "c c . ." "m1 m2 m3 m4";
     }
 }
 
 section {
     .section-headings {
         border-top: $logo-border solid $content-color;
-        width: calc( #{$logo-width}+( #{$logo-padding} * 3));
+        width: calc( #{$logo-width} + ( #{$logo-padding} * 3));
         padding-top: 1rem;
         line-height: 1em;
         grid-column: 1 / span 2;
     }
     p {
-        max-width: 25rem;
+        // max-width: 25rem;
     }
     .section-content {
         display: grid;
-        grid-gap: 1vh;
-        grid-template-areas: "p1" "img" "p2";
+        grid-gap: 4vmin;
+        grid-template-areas: "p1" "img" "p2" "links";
         margin-top: 2vh;
         height: fit-content;
         .p1 {
@@ -314,16 +338,19 @@ section {
                 }
             }
         }
+        .links {
+            grid-area: links;
+        }
         @media screen and (min-width: 50rem) {
-            grid-template-areas: "p1 p1 . ." "img img p2 p2";
+            grid-template-areas: "p1 p1 . links" "img img p2 p2";
             .img {
                 width: unset;
                 margin: initial;
             }
         }
         @media screen and (min-width: 80rem) {
-            grid-template-areas: "p1 . . ." "p2 . img img" ". . img img";
-            grid-template-columns: 4fr 1vw 3fr 4fr;
+            grid-template-areas: "p1 . . ." "p2 . img img" "links . img img";
+            grid-template-columns: 5fr 1vw 3fr 4fr;
             grid-template-rows: 1fr 3fr 3fr;
         }
     }
