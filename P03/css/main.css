@@ -129,6 +129,7 @@ code {
 .main-wrap#home-wrap #home-main p {
   font-family: "Markazi Text", Georgia, "Times New Roman", Times, serif;
   font-size: 5vmax;
+  text-align: justify;
 }
 
 .main-wrap#home-wrap #logo-wrap {
