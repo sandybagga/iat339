@@ -168,6 +168,7 @@ code {
   left: 0;
   opacity: 0.98;
   padding-top: 0.8vh;
+  padding-bottom: 1vh;
   border-top: 1vh solid #00345c;
 }
 
