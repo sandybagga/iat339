@@ -37,7 +37,7 @@ sans-serif;
     display: none;
 }
 
-body{
+body {
     background-color: $background-color;
 }
 
@@ -134,33 +134,32 @@ code {
     padding: 10vh 5vw;
     background-color: $background-color;
     &#home-wrap {
-        max-width:unset;
-        // padding:unset;
+        max-width: unset; // padding:unset;
         margin: unset;
-        #home-main{
+        #home-main {
             max-width: unset;
-            h1{
+            h1 {
                 font-size: 7vmax;
                 text-transform: unset;
                 line-height: 1em;
                 margin-top: 0;
             }
-            p{
+            p {
                 font-family: $serif;
                 font-size: 5vmax;
                 text-align: justify;
             }
         }
-        #logo-wrap{
-            top: 6vh;
+        #logo-wrap {
+            top: 4vh;
             left: 4vw;
-            width: 30%;
+            width: 28%;
             position: fixed;
             mix-blend-mode: difference;
             border-color: $content-color;
             border-width: 3vw;
             padding: 4vw;
-            svg{
+            svg {
                 fill: $content-color;
             }
         }
@@ -171,9 +170,25 @@ code {
             * {
                 display: block;
             }
-            a{
-                font-size: 4.5vmax;
-                border-width: 1.2vh;
+            nav {
+                position: fixed;
+                bottom: 0;
+                background-color: $background-color;
+                width: 100vw;
+                overflow-x: scroll;
+                left: 0;
+                ul {
+                    display: flex;
+                    align-content: stretch;
+                    justify-content: space-evenly;
+                    li {
+                        display: inline-block;
+                    }
+                }
+                a {
+                    font-size: 4vmax;
+                    border-width: 1.2vh;
+                }
             }
             .project {
                 height: 15rem;
@@ -218,8 +233,7 @@ code {
     border: $logo-border solid $content-color;
     font-size: unset;
     background-color: unset;
-    pointer-events: none;
-    // position: fixed;
+    pointer-events: none; // position: fixed;
     // mix-blend-mode: hard-light;
     svg {
         fill: $content-color;
@@ -273,12 +287,19 @@ header {
         }
     }
     .metadata {
-        
         padding-bottom: 2vh;
-        &#roles{grid-area: m1;}
-        &#tools{grid-area: m2;}
-        &#skills{grid-area: m3;}
-        &#team{grid-area: m4;}
+        &#roles {
+            grid-area: m1;
+        }
+        &#tools {
+            grid-area: m2;
+        }
+        &#skills {
+            grid-area: m3;
+        }
+        &#team {
+            grid-area: m4;
+        }
         * {
             display: inline;
             line-height: 1.75em;
@@ -297,8 +318,7 @@ header {
         }
     }
     @media screen and (min-width:50rem) {
-        grid-template-areas: "c c" "m1 m2" "m3 m4";
-        // grid-auto-rows: 1fr;
+        grid-template-areas: "c c" "m1 m2" "m3 m4"; // grid-auto-rows: 1fr;
     }
     @media screen and (min-width:80rem) {
         grid-template-areas: "c c . ." "m1 m2 m3 m4";
@@ -308,7 +328,7 @@ header {
 section {
     .section-headings {
         border-top: $logo-border solid $content-color;
-        width: calc( #{$logo-width} + ( #{$logo-padding} * 3));
+        width: calc( #{$logo-width}+( #{$logo-padding} * 3));
         padding-top: 1rem;
         line-height: 1em;
         grid-column: 1 / span 2;

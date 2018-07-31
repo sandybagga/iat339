@@ -133,9 +133,9 @@ code {
 }
 
 .main-wrap#home-wrap #logo-wrap {
-  top: 6vh;
+  top: 4vh;
   left: 4vw;
-  width: 30%;
+  width: 28%;
   position: fixed;
   mix-blend-mode: difference;
   border-color: #00345c;
@@ -159,8 +159,32 @@ code {
   display: block;
 }
 
-.main-wrap#home-wrap #projects a {
-  font-size: 4.5vmax;
+.main-wrap#home-wrap #projects nav {
+  position: fixed;
+  bottom: 0;
+  background-color: #fdfdf6;
+  width: 100vw;
+  overflow-x: scroll;
+  left: 0;
+}
+
+.main-wrap#home-wrap #projects nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.main-wrap#home-wrap #projects nav ul li {
+  display: inline-block;
+}
+
+.main-wrap#home-wrap #projects nav a {
+  font-size: 4vmax;
   border-width: 1.2vh;
 }
 
@@ -341,7 +365,7 @@ header .metadata h3 {
 
 section .section-headings {
   border-top: calc( calc( 4rem / 4) / 2) solid #00345c;
-  width: calc( 4rem + ( calc( 4rem / 4) * 3));
+  width: calc( 4rem+( calc( 4rem / 4) * 3));
   padding-top: 1rem;
   line-height: 1em;
   -ms-grid-column: 1;
