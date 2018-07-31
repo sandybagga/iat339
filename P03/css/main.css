@@ -120,7 +120,7 @@ code {
 }
 
 .main-wrap#home-wrap #home-main h1 {
-  font-size: 7vmax;
+  font-size: 6vmax;
   text-transform: unset;
   line-height: 1em;
   margin-top: 0;
@@ -135,7 +135,7 @@ code {
 .main-wrap#home-wrap #logo-wrap {
   top: 4vh;
   left: 4vw;
-  width: 28%;
+  width: 25%;
   position: fixed;
   mix-blend-mode: difference;
   border-color: #00345c;
@@ -166,6 +166,13 @@ code {
   width: 100vw;
   overflow-x: scroll;
   left: 0;
+  opacity: 0.98;
+  padding-top: 0.8vh;
+  border-top: 1vh solid #00345c;
+}
+
+.main-wrap#home-wrap #projects nav:hover {
+  opacity: 1;
 }
 
 .main-wrap#home-wrap #projects nav ul {

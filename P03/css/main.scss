@@ -139,7 +139,7 @@ code {
         #home-main {
             max-width: unset;
             h1 {
-                font-size: 7vmax;
+                font-size: 6vmax;
                 text-transform: unset;
                 line-height: 1em;
                 margin-top: 0;
@@ -153,7 +153,7 @@ code {
         #logo-wrap {
             top: 4vh;
             left: 4vw;
-            width: 28%;
+            width: 25%;
             position: fixed;
             mix-blend-mode: difference;
             border-color: $content-color;
@@ -177,6 +177,12 @@ code {
                 width: 100vw;
                 overflow-x: scroll;
                 left: 0;
+                opacity: 0.98; 
+                padding-top: 0.8vh;
+                border-top: 1vh solid $content-color;
+                &:hover{
+                    opacity:1;
+                }
                 ul {
                     display: flex;
                     align-content: stretch;
