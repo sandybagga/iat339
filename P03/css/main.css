@@ -120,7 +120,7 @@ code {
 }
 
 .main-wrap#home-wrap #home-main h1 {
-  font-size: 8vmax;
+  font-size: 7vmax;
   text-transform: unset;
   line-height: 1em;
   margin-top: 0;
@@ -128,7 +128,7 @@ code {
 
 .main-wrap#home-wrap #home-main p {
   font-family: "Markazi Text", Georgia, "Times New Roman", Times, serif;
-  font-size: 6vmax;
+  font-size: 5vmax;
 }
 
 .main-wrap#home-wrap #logo-wrap {
@@ -254,7 +254,7 @@ header {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "c" "m1" "m2" "m3" "m4";
-  grid-gap: 2vmin 1vmax;
+  grid-gap: 2vmin 3vmax;
   padding: 5vh 5vw;
 }
 
@@ -274,12 +274,13 @@ header .header-content h1,
 header .header-content #project-desc {
   padding: 1rem;
   color: #00345c;
-  background-color: white;
+  mix-blend-mode: luminosity;
+  background-color: #fdfdf6;
   margin: 0.2rem 0;
 }
 
 header .metadata {
-  max-width: 40ch;
+  padding-bottom: 2vh;
 }
 
 header .metadata#roles {
@@ -320,7 +321,8 @@ header .metadata p {
 header .metadata h3 {
   color: #00345c;
   padding: 0.2em;
-  background-color: white;
+  mix-blend-mode: luminosity;
+  background-color: #fdfdf6;
   margin-top: 0;
 }
 
@@ -389,6 +391,7 @@ section .section-content .img figcaption {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  background-color: #fdfdf6;
   padding: 0.8em;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;

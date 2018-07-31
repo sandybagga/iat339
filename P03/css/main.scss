@@ -140,14 +140,14 @@ code {
         #home-main{
             max-width: unset;
             h1{
-                font-size: 8vmax;
+                font-size: 7vmax;
                 text-transform: unset;
                 line-height: 1em;
                 margin-top: 0;
             }
             p{
                 font-family: $serif;
-                font-size: 6vmax;
+                font-size: 5vmax;
             }
         }
         #logo-wrap{
@@ -253,7 +253,7 @@ header {
     align-content: space-between;
     display: grid;
     grid-template-areas: "c" "m1" "m2" "m3" "m4";
-    grid-gap: 2vmin 1vmax;
+    grid-gap: 2vmin 3vmax;
     padding: 5vh 5vw;
     * {
         background-color: unset;
@@ -266,12 +266,14 @@ header {
         #project-desc {
             padding: 1rem;
             color: $content-color;
-            background-color: white;
+            mix-blend-mode: luminosity;
+            background-color: $background-color;
             margin: 0.2rem 0;
         }
     }
     .metadata {
-        max-width: 40ch;
+        
+        padding-bottom: 2vh;
         &#roles{grid-area: m1;}
         &#tools{grid-area: m2;}
         &#skills{grid-area: m3;}
@@ -288,7 +290,8 @@ header {
         h3 {
             color: $content-color;
             padding: 0.2em;
-            background-color: white;
+            mix-blend-mode: luminosity;
+            background-color: $background-color;
             margin-top: 0;
         }
     }
@@ -334,6 +337,7 @@ section {
             margin: 2em auto;
             figcaption {
                 width: fit-content;
+                background-color: $background-color;
                 padding: 0.8em;
                 align-self: center;
                 margin: 1em auto 0;
