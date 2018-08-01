@@ -106,7 +106,7 @@ code {
 .main-wrap {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 10vh 5vw;
+  padding: 8vh 5vw 0;
   background-color: #fdfdf6;
 }
 
@@ -117,25 +117,81 @@ code {
 
 .main-wrap#home-wrap #home-main {
   max-width: unset;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "h" "pBio" "pEdu" "nav";
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
 
 .main-wrap#home-wrap #home-main h1 {
-  font-size: 6vmax;
+  font-size: 3.5rem;
   text-transform: unset;
-  line-height: 1em;
   margin-top: 0;
+  text-align: right;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: h;
 }
 
 .main-wrap#home-wrap #home-main p {
   font-family: "Markazi Text", Georgia, "Times New Roman", Times, serif;
-  font-size: 5vmax;
+  font-size: 3rem;
   text-align: justify;
+}
+
+.main-wrap#home-wrap #home-main p:first-of-type {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: pBio;
+}
+
+.main-wrap#home-wrap #home-main p:nth-of-type(2) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: pEdu;
+}
+
+.main-wrap#home-wrap #home-main nav {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: nav;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  padding-top: 3rem;
+}
+
+.main-wrap#home-wrap #home-main nav a {
+  font-size: 2.5rem;
+}
+
+@media screen and (min-width: 50rem) {
+  .main-wrap#home-wrap #home-main {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: ". h h" "pBio pBio ." "nav pEdu pEdu";
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  .main-wrap#home-wrap #home-main {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: ". . h h" ". pBio pBio ." "nav . pEdu pEdu";
+  }
+  .main-wrap#home-wrap #home-main h1 {
+    font-size: 5rem;
+  }
+  .main-wrap#home-wrap #home-main p {
+    font-size: 4rem;
+  }
 }
 
 .main-wrap#home-wrap #logo-wrap {
   top: 4vh;
   left: 4vw;
-  width: 25%;
+  width: 20%;
   position: fixed;
   mix-blend-mode: difference;
   border-color: #00345c;
@@ -145,55 +201,6 @@ code {
 
 .main-wrap#home-wrap #logo-wrap svg {
   fill: #00345c;
-}
-
-.main-wrap#home-wrap #projects {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 3vw;
-}
-
-.main-wrap#home-wrap #projects * {
-  display: block;
-}
-
-.main-wrap#home-wrap #projects nav {
-  position: fixed;
-  bottom: 0;
-  background-color: #fdfdf6;
-  width: 100vw;
-  overflow-x: scroll;
-  left: 0;
-  opacity: 0.98;
-  padding-top: 0.8vh;
-  padding-bottom: 1vh;
-  border-top: 1vh solid #00345c;
-}
-
-.main-wrap#home-wrap #projects nav:hover {
-  opacity: 1;
-}
-
-.main-wrap#home-wrap #projects nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.main-wrap#home-wrap #projects nav ul li {
-  display: inline-block;
-}
-
-.main-wrap#home-wrap #projects nav a {
-  font-size: 4vmax;
-  border-width: 1.2vh;
 }
 
 .main-wrap#home-wrap #projects .project {
@@ -373,7 +380,7 @@ header .metadata h3 {
 
 section .section-headings {
   border-top: calc( calc( 4rem / 4) / 2) solid #00345c;
-  width: calc( 4rem+( calc( 4rem / 4) * 3));
+  width: calc( 4rem + ( calc( 4rem / 4) * 3));
   padding-top: 1rem;
   line-height: 1em;
   -ms-grid-column: 1;

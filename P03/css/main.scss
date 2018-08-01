@@ -131,29 +131,58 @@ code {
 .main-wrap {
     max-width: 80rem;
     margin: 0 auto;
-    padding: 10vh 5vw;
+    padding: 8vh 5vw 0;
     background-color: $background-color;
     &#home-wrap {
         max-width: unset; // padding:unset;
         margin: unset;
         #home-main {
             max-width: unset;
+            display:grid;
+            grid-template-areas: "h" "pBio" "pEdu" "nav";
+            grid-template-columns: 1fr;
             h1 {
-                font-size: 6vmax;
+                font-size: 3.5rem;
                 text-transform: unset;
-                line-height: 1em;
                 margin-top: 0;
+                text-align: right;
+                grid-area: h;
             }
             p {
                 font-family: $serif;
-                font-size: 5vmax;
+                font-size: 3rem;
                 text-align: justify;
+                &:first-of-type{
+                    grid-area: pBio;
+                }
+                &:nth-of-type(2){
+                    grid-area: pEdu;
+                }
+            }
+            nav {
+                grid-area: nav;
+                align-items: end;
+                padding-top:3rem;
+                a {
+                    font-size: 2.5rem;
+                }
+            }
+            @media screen and (min-width:50rem){
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas: ". h h" "pBio pBio ." "nav pEdu pEdu";
+            }
+            @media screen and (min-width:90rem){
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-areas: ". . h h" ". pBio pBio ." "nav . pEdu pEdu";
+                h1{font-size:5rem;}
+                p{font-size:4rem;}
             }
         }
+        
         #logo-wrap {
             top: 4vh;
             left: 4vw;
-            width: 25%;
+            width: 20%;
             position: fixed;
             mix-blend-mode: difference;
             border-color: $content-color;
@@ -164,39 +193,6 @@ code {
             }
         }
         #projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-            grid-gap: 3vw;
-            * {
-                display: block;
-            }
-            nav {
-                position: fixed;
-                bottom: 0;
-                background-color: $background-color;
-                width: 100vw;
-                overflow-x: scroll;
-                left: 0;
-                opacity: 0.98; 
-                padding-top: 0.8vh;
-                padding-bottom: 1vh;
-                border-top: 1vh solid $content-color;
-                &:hover{
-                    opacity:1;
-                }
-                ul {
-                    display: flex;
-                    align-content: stretch;
-                    justify-content: space-evenly;
-                    li {
-                        display: inline-block;
-                    }
-                }
-                a {
-                    font-size: 4vmax;
-                    border-width: 1.2vh;
-                }
-            }
             .project {
                 height: 15rem;
                 display: flex;
@@ -335,7 +331,7 @@ header {
 section {
     .section-headings {
         border-top: $logo-border solid $content-color;
-        width: calc( #{$logo-width}+( #{$logo-padding} * 3));
+        width: calc( #{$logo-width} + ( #{$logo-padding} * 3));
         padding-top: 1rem;
         line-height: 1em;
         grid-column: 1 / span 2;
