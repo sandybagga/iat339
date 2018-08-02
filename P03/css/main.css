@@ -191,17 +191,6 @@ code {
   }
 }
 
-.main-wrap#home-wrap #logo-wrap {
-  width: 20%;
-  border-color: #00345c;
-  border-width: 3vw;
-  padding: 4vw;
-}
-
-.main-wrap#home-wrap #logo-wrap svg {
-  fill: #00345c;
-}
-
 .main-wrap#home-wrap #projects .project {
   height: 15rem;
   display: -webkit-box;
@@ -262,6 +251,21 @@ code {
   -webkit-transform-origin: left top 0;
           transform-origin: left top 0;
   pointer-events: none;
+}
+
+.main-wrap .bg#logo-wrap {
+  -webkit-transform: none;
+          transform: none;
+  top: 4vh;
+  left: 5vw;
+  width: 20%;
+  border-color: #00345c;
+  border-width: 2vw;
+  padding: 3vw;
+}
+
+.main-wrap .bg#logo-wrap svg {
+  fill: #00345c;
 }
 
 .main-wrap .bg#makercube-bg {

@@ -183,18 +183,7 @@ code {
                 }
             }
         }
-        #logo-wrap {
-            // top: 4vh;
-            // left: 4vw;
-            width: 20%; // position: fixed;
-            // mix-blend-mode: difference;
-            border-color: $content-color;
-            border-width: 3vw;
-            padding: 4vw;
-            svg {
-                fill: $content-color;
-            }
-        }
+
         #projects {
             .project {
                 height: 15rem;
@@ -241,6 +230,18 @@ code {
         transform: rotate(90deg);
         transform-origin: left top 0;
         pointer-events: none;
+        &#logo-wrap{
+            transform: none;
+            top:4vh;
+            left:5vw;
+            width: 20%;
+            border-color: $content-color;
+            border-width: 2vw;
+            padding: 3vw;
+            svg {
+                fill: $content-color;
+            }
+        }
         &#makercube-bg{
             left: 36rem;
         }
