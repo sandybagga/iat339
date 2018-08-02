@@ -77,16 +77,17 @@ a:not(.nav-link):hover, a:not(.nav-link):active {
 }
 
 .nav-link {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: "Markazi Text", Georgia, "Times New Roman", Times, serif;
   text-transform: capitalize;
   font-weight: 700;
   color: #00345c;
   text-decoration: none;
-  border-bottom: calc(calc( calc( 4rem / 4) / 2) / 2) solid #fdfdf6;
+  border-bottom: calc(calc( calc( 4.75rem / 4) / 2) / 2) solid #fdfdf6;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  margin-top: 1.5rem;
 }
 
 .nav-link:hover, .nav-link:active {
@@ -104,10 +105,14 @@ code {
 }
 
 .main-wrap {
+  height: 88vh;
+  padding: 12vh 5vw 0;
+  background-color: #fdfdf6;
+}
+
+.main-wrap main {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 8vh 5vw 0;
-  background-color: #fdfdf6;
 }
 
 .main-wrap#home-wrap {
@@ -116,7 +121,6 @@ code {
 }
 
 .main-wrap#home-wrap #home-main {
-  max-width: unset;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "h" "pBio" "pEdu" "nav";
@@ -128,7 +132,6 @@ code {
   font-size: 3.5rem;
   text-transform: unset;
   margin-top: 0;
-  text-align: right;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: h;
@@ -138,6 +141,7 @@ code {
   font-family: "Markazi Text", Georgia, "Times New Roman", Times, serif;
   font-size: 3rem;
   text-align: justify;
+  text-justify: inter-character;
 }
 
 .main-wrap#home-wrap #home-main p:first-of-type {
@@ -162,38 +166,31 @@ code {
   padding-top: 3rem;
 }
 
-.main-wrap#home-wrap #home-main nav a {
-  font-size: 2.5rem;
-}
-
 @media screen and (min-width: 50rem) {
   .main-wrap#home-wrap #home-main {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: ". h h" "pBio pBio ." "nav pEdu pEdu";
+        grid-template-areas: "h h h" "pBio pBio ." "nav pEdu pEdu";
   }
 }
 
 @media screen and (min-width: 90rem) {
   .main-wrap#home-wrap #home-main {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: ". . h h" ". pBio pBio ." "nav . pEdu pEdu";
+    -ms-grid-columns: min-content (1fr)[3];
+        grid-template-columns: -webkit-min-content repeat(3, 1fr);
+        grid-template-columns: min-content repeat(3, 1fr);
+        grid-template-areas: "h h h ." "pBio pBio pBio ." "nav . pEdu pEdu";
   }
   .main-wrap#home-wrap #home-main h1 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
   .main-wrap#home-wrap #home-main p {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
 
 .main-wrap#home-wrap #logo-wrap {
-  top: 4vh;
-  left: 4vw;
   width: 20%;
-  position: fixed;
-  mix-blend-mode: difference;
   border-color: #00345c;
   border-width: 3vw;
   padding: 4vw;
@@ -215,7 +212,7 @@ code {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  border: calc( calc( 4rem / 4) / 2) solid #00345c;
+  border: calc( calc( 4.75rem / 4) / 2) solid #00345c;
   background-repeat: no-repeat;
 }
 
@@ -251,10 +248,20 @@ code {
   background-size: cover;
 }
 
+.main-wrap .bg {
+  position: fixed;
+  top: 8vh;
+  left: 2vw;
+  mix-blend-mode: difference;
+  font-size: 25rem;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
 #logo-wrap {
-  width: 4rem;
-  padding: calc( 4rem / 4);
-  border: calc( calc( 4rem / 4) / 2) solid #00345c;
+  width: 4.75rem;
+  padding: calc( 4.75rem / 4);
+  border: calc( calc( 4.75rem / 4) / 2) solid #00345c;
   font-size: unset;
   background-color: unset;
   pointer-events: none;
@@ -271,38 +278,42 @@ code {
 
 section,
 header {
-  margin: 5vh 0;
+  margin: 5vh 0 2vh;
 }
 
 nav {
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: min-content 1fr;
+      grid-template-columns: -webkit-min-content 1fr;
+      grid-template-columns: min-content 1fr;
+  grid-column-gap: 3vmax;
 }
 
 nav ul li {
   list-style: none;
 }
 
-header {
+nav ul li:nth-child(2), nav ul li:nth-child(3) {
+  margin-top: 0.85em;
+}
+
+header#makercube {
   background-image: url("../img/makercube/makercube2.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
   background-color: unset;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
   display: -ms-grid;
   display: grid;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
       grid-template-areas: "c" "m1" "m2" "m3" "m4";
   grid-gap: 2vmin 3vmax;
   padding: 5vh 5vw;
 }
 
-header * {
-  background-color: unset;
-}
-
-header .header-content {
+header#makercube .header-content {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: c;
@@ -310,8 +321,8 @@ header .header-content {
   margin-bottom: 5vmin;
 }
 
-header .header-content h1,
-header .header-content #project-desc {
+header#makercube .header-content h1,
+header#makercube .header-content #project-desc {
   padding: 1rem;
   color: #00345c;
   mix-blend-mode: luminosity;
@@ -319,46 +330,50 @@ header .header-content #project-desc {
   margin: 0.2rem 0;
 }
 
-header .metadata {
+header#makercube .header-content h1 {
+  font-size: 3rem;
+}
+
+header#makercube .metadata {
   padding-bottom: 2vh;
 }
 
-header .metadata#roles {
+header#makercube .metadata#roles {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: m1;
 }
 
-header .metadata#tools {
+header#makercube .metadata#tools {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: m2;
 }
 
-header .metadata#skills {
+header#makercube .metadata#skills {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: m3;
 }
 
-header .metadata#team {
+header#makercube .metadata#team {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: m4;
 }
 
-header .metadata * {
+header#makercube .metadata * {
   display: inline;
   line-height: 1.75em;
   margin: 0.2em 0;
 }
 
-header .metadata p {
+header#makercube .metadata p {
   color: white;
   display: inline;
 }
 
-header .metadata h3 {
+header#makercube .metadata h3 {
   color: #00345c;
   padding: 0.2em;
   mix-blend-mode: luminosity;
@@ -367,20 +382,24 @@ header .metadata h3 {
 }
 
 @media screen and (min-width: 50rem) {
-  header {
+  header#makercube {
         grid-template-areas: "c c" "m1 m2" "m3 m4";
   }
 }
 
 @media screen and (min-width: 80rem) {
-  header {
+  header#makercube {
         grid-template-areas: "c c . ." "m1 m2 m3 m4";
   }
 }
 
+header * {
+  background-color: unset;
+}
+
 section .section-headings {
-  border-top: calc( calc( 4rem / 4) / 2) solid #00345c;
-  width: calc( 4rem + ( calc( 4rem / 4) * 3));
+  border-top: calc( calc( 4.75rem / 4) / 2) solid #00345c;
+  width: calc( 4.75rem + ( calc( 4.75rem / 4) * 3));
   padding-top: 1rem;
   line-height: 1em;
   -ms-grid-column: 1;
@@ -469,6 +488,78 @@ section .section-content .links {
     -ms-grid-rows: 1fr 3fr 3fr;
         grid-template-rows: 1fr 3fr 3fr;
   }
+}
+
+section.resume-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: calc( 4.75rem + ( calc( 4.75rem / 4) * 3)) 3fr 1fr;
+      grid-template-columns: calc( 4.75rem + ( calc( 4.75rem / 4) * 3)) 3fr 1fr;
+  grid-column-gap: 3vmax;
+      grid-template-areas: "heading content";
+}
+
+section.resume-grid .section-headings {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: heading;
+}
+
+section.resume-grid .resume-content-grid {
+  padding-top: calc(calc( 4.75rem / 4) * 2.15);
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: content;
+}
+
+section.resume-grid .resume-content-grid h2, section.resume-grid .resume-content-grid h3 {
+  display: block;
+  margin-top: 0;
+}
+
+section.resume-grid .resume-content-grid p {
+  margin-top: calc( calc( 4.75rem / 4) / 2);
+}
+
+section.resume-grid .resume-content-grid:nth-of-type(2) {
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+section.resume-grid .resume-content-grid:nth-of-type(3) {
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+section#skills-container #skills-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 3vmin 3vmax;
+      grid-template-areas: "exp inf" "int dev";
+}
+
+section#skills-container #skills-grid #exp {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: exp;
+}
+
+section#skills-container #skills-grid #inf {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: inf;
+}
+
+section#skills-container #skills-grid #int {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: int;
+}
+
+section#skills-container #skills-grid #dev {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: dev;
 }
 
 main {

@@ -14,9 +14,10 @@ $faded-color: rgba(0,
 52,
 92,
 0.8);
-$logo-width: 4rem;
+$logo-width: 4.75rem;
 $logo-padding: calc( #{$logo-width} / 4);
 $logo-border: calc( #{$logo-padding} / 2);
+$logo-container-width: calc( #{$logo-width} + ( #{$logo-padding} * 3));
 $serif: 'Markazi Text',
 Georgia,
 'Times New Roman',
@@ -106,7 +107,7 @@ a:not(.nav-link) {
 }
 
 .nav-link {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-family: $serif;
     text-transform: capitalize;
     font-weight: 700;
@@ -114,6 +115,7 @@ a:not(.nav-link) {
     text-decoration: none;
     border-bottom: calc(#{$logo-border} / 2) solid $background-color;
     width: fit-content;
+    margin-top: 1.5rem;
     &:hover,
     &:active {
         border-color: $content-color;
@@ -129,62 +131,65 @@ code {
 }
 
 .main-wrap {
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 8vh 5vw 0;
+    height: 88vh;
+    padding: 12vh 5vw 0;
     background-color: $background-color;
+    main{
+        max-width: 80rem;
+        margin: 0 auto;
+    }
     &#home-wrap {
         max-width: unset; // padding:unset;
         margin: unset;
         #home-main {
-            max-width: unset;
-            display:grid;
+            
+            display: grid;
             grid-template-areas: "h" "pBio" "pEdu" "nav";
             grid-template-columns: 1fr;
             h1 {
                 font-size: 3.5rem;
                 text-transform: unset;
-                margin-top: 0;
-                text-align: right;
+                margin-top: 0; // text-align: right;
                 grid-area: h;
             }
             p {
                 font-family: $serif;
                 font-size: 3rem;
                 text-align: justify;
-                &:first-of-type{
+                text-justify: inter-character;
+                &:first-of-type {
                     grid-area: pBio;
                 }
-                &:nth-of-type(2){
+                &:nth-of-type(2) {
                     grid-area: pEdu;
                 }
             }
             nav {
                 grid-area: nav;
                 align-items: end;
-                padding-top:3rem;
-                a {
-                    font-size: 2.5rem;
+                padding-top: 3rem;
+            }
+            @media screen and (min-width:50rem) {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas: "h h h" "pBio pBio ." "nav pEdu pEdu";
+            }
+            @media screen and (min-width:90rem) {
+                grid-template-columns: min-content repeat(3, 1fr); // grid-column-gap: 2vw;
+                grid-template-areas: "h h h ." "pBio pBio pBio ." "nav . pEdu pEdu";
+                h1 {
+                    font-size: 4rem;
+                }
+                p {
+                    font-size: 3.5rem;
                 }
             }
-            @media screen and (min-width:50rem){
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-areas: ". h h" "pBio pBio ." "nav pEdu pEdu";
-            }
-            @media screen and (min-width:90rem){
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-areas: ". . h h" ". pBio pBio ." "nav . pEdu pEdu";
-                h1{font-size:5rem;}
-                p{font-size:4rem;}
-            }
         }
-        
         #logo-wrap {
-            top: 4vh;
-            left: 4vw;
+            // top: 4vh;
+            // left: 4vw;
             width: 20%;
-            position: fixed;
-            mix-blend-mode: difference;
+            // position: fixed;
+            // mix-blend-mode: difference;
             border-color: $content-color;
             border-width: 3vw;
             padding: 4vw;
@@ -228,6 +233,15 @@ code {
             }
         }
     }
+    .bg{
+        position: fixed;
+        top: 8vh;
+        left: 2vw;
+        mix-blend-mode: difference;
+        font-size: 25rem;
+        opacity: 0.2;
+        pointer-events: none;
+    }
 }
 
 #logo-wrap {
@@ -250,88 +264,107 @@ code {
 
 section,
 header {
-    margin: 5vh 0;
+    margin: 5vh 0 2vh;
 }
 
 nav {
     display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-column-gap: 3vmax;
     ul {
         li {
             list-style: none;
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin-top: 0.85em;
+            }
         }
     }
 }
 
 header {
-    background-image: url("../img/makercube/makercube2.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-color: unset;
-    align-content: space-between;
-    display: grid;
-    grid-template-areas: "c" "m1" "m2" "m3" "m4";
-    grid-gap: 2vmin 3vmax;
-    padding: 5vh 5vw;
+    &#makercube {
+        background-image: url("../img/makercube/makercube2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-color: unset;
+        display: grid;
+        align-content: space-between;
+        grid-template-areas: "c" "m1" "m2" "m3" "m4";
+        grid-gap: 2vmin 3vmax;
+        padding: 5vh 5vw;
+        .header-content {
+            grid-area: c;
+            max-width: 50ch;
+            margin-bottom: 5vmin;
+            h1,
+            #project-desc {
+                padding: 1rem;
+                color: $content-color;
+                mix-blend-mode: luminosity;
+                background-color: $background-color;
+                margin: 0.2rem 0;
+            }
+            h1{
+                font-size: 3rem;
+            }
+        }
+        .metadata {
+            padding-bottom: 2vh;
+            &#roles {
+                grid-area: m1;
+            }
+            &#tools {
+                grid-area: m2;
+            }
+            &#skills {
+                grid-area: m3;
+            }
+            &#team {
+                grid-area: m4;
+            }
+            * {
+                display: inline;
+                line-height: 1.75em;
+                margin: 0.2em 0;
+            }
+            p {
+                color: white;
+                display: inline;
+            }
+            h3 {
+                color: $content-color;
+                padding: 0.2em;
+                mix-blend-mode: luminosity;
+                background-color: $background-color;
+                margin-top: 0;
+            }
+        }
+        @media screen and (min-width:50rem) {
+            grid-template-areas: "c c" "m1 m2" "m3 m4"; // grid-auto-rows: 1fr;
+        }
+        @media screen and (min-width:80rem) {
+            grid-template-areas: "c c . ." "m1 m2 m3 m4";
+        }
+    }
+    &#resume{
+        // grid-template-columns: $logo-container-width 1fr;
+        // grid-column-gap: 3vmax;
+        h1{
+            // grid-area: content;
+            // grid-column: 2 / span 1;
+        }
+    }
     * {
         background-color: unset;
-    }
-    .header-content {
-        grid-area: c;
-        max-width: 50ch;
-        margin-bottom: 5vmin;
-        h1,
-        #project-desc {
-            padding: 1rem;
-            color: $content-color;
-            mix-blend-mode: luminosity;
-            background-color: $background-color;
-            margin: 0.2rem 0;
-        }
-    }
-    .metadata {
-        padding-bottom: 2vh;
-        &#roles {
-            grid-area: m1;
-        }
-        &#tools {
-            grid-area: m2;
-        }
-        &#skills {
-            grid-area: m3;
-        }
-        &#team {
-            grid-area: m4;
-        }
-        * {
-            display: inline;
-            line-height: 1.75em;
-            margin: 0.2em 0;
-        }
-        p {
-            color: white;
-            display: inline;
-        }
-        h3 {
-            color: $content-color;
-            padding: 0.2em;
-            mix-blend-mode: luminosity;
-            background-color: $background-color;
-            margin-top: 0;
-        }
-    }
-    @media screen and (min-width:50rem) {
-        grid-template-areas: "c c" "m1 m2" "m3 m4"; // grid-auto-rows: 1fr;
-    }
-    @media screen and (min-width:80rem) {
-        grid-template-areas: "c c . ." "m1 m2 m3 m4";
     }
 }
 
 section {
     .section-headings {
         border-top: $logo-border solid $content-color;
-        width: calc( #{$logo-width} + ( #{$logo-padding} * 3));
+        width: $logo-container-width;
         padding-top: 1rem;
         line-height: 1em;
         grid-column: 1 / span 2;
@@ -386,6 +419,35 @@ section {
             grid-template-areas: "p1 . . ." "p2 . img img" "links . img img";
             grid-template-columns: 5fr 1vw 3fr 4fr;
             grid-template-rows: 1fr 3fr 3fr;
+        }
+    }
+    &.resume-grid{
+        display: grid;
+        grid-template-columns: $logo-container-width 3fr 1fr;
+        grid-column-gap: 3vmax;
+        grid-template-areas: "heading content";
+        .section-headings{
+            grid-area: heading;
+        }
+        .resume-content-grid{
+            padding-top: calc(#{$logo-padding} * 2.15);
+            h2, h3{display: block; margin-top:0;}
+            p{margin-top: $logo-border;}
+            grid-area: content;
+            &:nth-of-type(2){grid-row: 2;}
+            &:nth-of-type(3){grid-row: 3;}
+        }
+    }
+    &#skills-container{
+        #skills-grid{
+            
+            display: grid;
+            grid-gap: 3vmin 3vmax;
+            grid-template-areas: "exp inf" "int dev";
+            #exp{grid-area:exp;}
+            #inf{grid-area:inf;}
+            #int{grid-area:int;}
+            #dev{grid-area:dev;}
         }
     }
 }
