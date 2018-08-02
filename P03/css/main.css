@@ -105,8 +105,10 @@ code {
 }
 
 .main-wrap {
-  height: 88vh;
-  padding: 12vh 5vw 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 12vh 5vw 6vh;
   background-color: #fdfdf6;
 }
 
@@ -250,12 +252,20 @@ code {
 
 .main-wrap .bg {
   position: fixed;
-  top: 8vh;
-  left: 2vw;
+  top: -16rem;
+  left: 16rem;
   mix-blend-mode: difference;
   font-size: 25rem;
   opacity: 0.2;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transform-origin: left top 0;
+          transform-origin: left top 0;
   pointer-events: none;
+}
+
+.main-wrap .bg#makercube-bg {
+  left: 36rem;
 }
 
 #logo-wrap {
@@ -493,10 +503,10 @@ section .section-content .links {
 section.resume-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: calc( 4.75rem + ( calc( 4.75rem / 4) * 3)) 3fr 1fr;
-      grid-template-columns: calc( 4.75rem + ( calc( 4.75rem / 4) * 3)) 3fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   grid-column-gap: 3vmax;
-      grid-template-areas: "heading content";
+      grid-template-areas: "heading" "content";
 }
 
 section.resume-grid .section-headings {
@@ -507,12 +517,13 @@ section.resume-grid .section-headings {
 
 section.resume-grid .resume-content-grid {
   padding-top: calc(calc( 4.75rem / 4) * 2.15);
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   grid-area: content;
 }
 
-section.resume-grid .resume-content-grid h2, section.resume-grid .resume-content-grid h3 {
+section.resume-grid .resume-content-grid h2,
+section.resume-grid .resume-content-grid h3 {
   display: block;
   margin-top: 0;
 }
@@ -522,20 +533,36 @@ section.resume-grid .resume-content-grid p {
 }
 
 section.resume-grid .resume-content-grid:nth-of-type(2) {
-  -ms-grid-row: 2;
-  grid-row: 2;
+  -ms-grid-row: 3;
+  grid-row: 3;
 }
 
 section.resume-grid .resume-content-grid:nth-of-type(3) {
-  -ms-grid-row: 3;
-  grid-row: 3;
+  -ms-grid-row: 4;
+  grid-row: 4;
+}
+
+@media screen and (min-width: 50rem) {
+  section.resume-grid {
+    -ms-grid-columns: calc( 4.75rem + ( calc( 4.75rem / 4) * 3)) 3fr 1fr;
+        grid-template-columns: calc( 4.75rem + ( calc( 4.75rem / 4) * 3)) 3fr 1fr;
+        grid-template-areas: "heading content .";
+  }
+  section.resume-grid .resume-content-grid:nth-of-type(2) {
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
+  section.resume-grid .resume-content-grid:nth-of-type(3) {
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
 }
 
 section#skills-container #skills-grid {
   display: -ms-grid;
   display: grid;
   grid-gap: 3vmin 3vmax;
-      grid-template-areas: "exp inf" "int dev";
+      grid-template-areas: "exp" "inf" "int" "dev";
 }
 
 section#skills-container #skills-grid #exp {
@@ -545,21 +572,27 @@ section#skills-container #skills-grid #exp {
 }
 
 section#skills-container #skills-grid #inf {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   grid-area: inf;
 }
 
 section#skills-container #skills-grid #int {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: int;
 }
 
 section#skills-container #skills-grid #dev {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
   grid-area: dev;
+}
+
+@media screen and (min-width: 50rem) {
+  section#skills-container #skills-grid {
+        grid-template-areas: "exp inf" "int dev";
+  }
 }
 
 main {

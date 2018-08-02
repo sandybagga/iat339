@@ -131,10 +131,10 @@ code {
 }
 
 .main-wrap {
-    height: 88vh;
-    padding: 12vh 5vw 0;
+    height: fit-content;
+    padding: 12vh 5vw 6vh;
     background-color: $background-color;
-    main{
+    main {
         max-width: 80rem;
         margin: 0 auto;
     }
@@ -142,7 +142,6 @@ code {
         max-width: unset; // padding:unset;
         margin: unset;
         #home-main {
-            
             display: grid;
             grid-template-areas: "h" "pBio" "pEdu" "nav";
             grid-template-columns: 1fr;
@@ -187,8 +186,7 @@ code {
         #logo-wrap {
             // top: 4vh;
             // left: 4vw;
-            width: 20%;
-            // position: fixed;
+            width: 20%; // position: fixed;
             // mix-blend-mode: difference;
             border-color: $content-color;
             border-width: 3vw;
@@ -233,14 +231,19 @@ code {
             }
         }
     }
-    .bg{
+    .bg {
         position: fixed;
-        top: 8vh;
-        left: 2vw;
+        top: -16rem;
+        left: 16rem;
         mix-blend-mode: difference;
         font-size: 25rem;
         opacity: 0.2;
+        transform: rotate(90deg);
+        transform-origin: left top 0;
         pointer-events: none;
+        &#makercube-bg{
+            left: 36rem;
+        }
     }
 }
 
@@ -306,7 +309,7 @@ header {
                 background-color: $background-color;
                 margin: 0.2rem 0;
             }
-            h1{
+            h1 {
                 font-size: 3rem;
             }
         }
@@ -348,10 +351,10 @@ header {
             grid-template-areas: "c c . ." "m1 m2 m3 m4";
         }
     }
-    &#resume{
+    &#resume {
         // grid-template-columns: $logo-container-width 1fr;
         // grid-column-gap: 3vmax;
-        h1{
+        h1 {
             // grid-area: content;
             // grid-column: 2 / span 1;
         }
@@ -421,33 +424,65 @@ section {
             grid-template-rows: 1fr 3fr 3fr;
         }
     }
-    &.resume-grid{
+    &.resume-grid {
         display: grid;
-        grid-template-columns: $logo-container-width 3fr 1fr;
+        grid-template-columns: 1fr;
         grid-column-gap: 3vmax;
-        grid-template-areas: "heading content";
-        .section-headings{
+        grid-template-areas: "heading" "content";
+        .section-headings {
             grid-area: heading;
         }
-        .resume-content-grid{
+        .resume-content-grid {
             padding-top: calc(#{$logo-padding} * 2.15);
-            h2, h3{display: block; margin-top:0;}
-            p{margin-top: $logo-border;}
+            h2,
+            h3 {
+                display: block;
+                margin-top: 0;
+            }
+            p {
+                margin-top: $logo-border;
+            }
             grid-area: content;
-            &:nth-of-type(2){grid-row: 2;}
-            &:nth-of-type(3){grid-row: 3;}
+            &:nth-of-type(2) {
+                grid-row: 3;
+            }
+            &:nth-of-type(3) {
+                grid-row: 4;
+            }
+        }
+        @media screen and (min-width:50rem) {
+            grid-template-columns: $logo-container-width 3fr 1fr;
+            grid-template-areas: "heading content .";
+            .resume-content-grid {
+                &:nth-of-type(2) {
+                    grid-row: 2;
+                }
+                &:nth-of-type(3) {
+                    grid-row: 3;
+                }
+            }
         }
     }
-    &#skills-container{
-        #skills-grid{
-            
+    &#skills-container {
+        #skills-grid {
             display: grid;
             grid-gap: 3vmin 3vmax;
-            grid-template-areas: "exp inf" "int dev";
-            #exp{grid-area:exp;}
-            #inf{grid-area:inf;}
-            #int{grid-area:int;}
-            #dev{grid-area:dev;}
+            grid-template-areas: "exp" "inf" "int" "dev";
+            #exp {
+                grid-area: exp;
+            }
+            #inf {
+                grid-area: inf;
+            }
+            #int {
+                grid-area: int;
+            }
+            #dev {
+                grid-area: dev;
+            }
+            @media screen and (min-width:50rem) {
+                grid-template-areas: "exp inf" "int dev";
+            }
         }
     }
 }
