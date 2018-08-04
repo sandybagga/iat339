@@ -452,6 +452,10 @@ section .section-content .img {
   margin: 2em auto;
 }
 
+section .section-content .img img {
+  width: 100%;
+}
+
 section .section-content .img figcaption {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -571,7 +575,7 @@ section .section-content#research #fig-3 {
 
 @media screen and (min-width: 80rem) {
   section .section-content#research {
-        grid-template-areas: ". p1 p1 ." "p2 fig-2 fig-2 fig-2" ". fig-2 fig-2 fig-2" "fig-3 fig-3 p3 p3";
+        grid-template-areas: "p1 p1 . ." ". fig-2 fig-2 p2" ". fig-2 fig-2 ." "fig-3 fig-3 fig-3 p3" "fig-3 fig-3 fig-3 .";
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
   }

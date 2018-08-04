@@ -392,6 +392,9 @@ section {
             width: max-content;
             width: -webkit-fill-available;
             margin: 2em auto;
+            img{
+                width:100%;
+            }
             figcaption {
                 width: fit-content;
                 background-color: $background-color;
@@ -458,10 +461,11 @@ section {
                 .img {
                     width: unset;
                     margin: initial;
+
                 }
             }
             @media screen and (min-width: 80rem) {
-                grid-template-areas: ". p1 p1 ." "p2 fig-2 fig-2 fig-2" ". fig-2 fig-2 fig-2" "fig-3 fig-3 p3 p3";
+                grid-template-areas: "p1 p1 . ." ". fig-2 fig-2 p2" ". fig-2 fig-2 ." "fig-3 fig-3 fig-3 p3" "fig-3 fig-3 fig-3 .";
                 grid-template-columns: repeat(4, 1fr);
                 .p3{
                     align-self: end;
