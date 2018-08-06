@@ -99,10 +99,10 @@ a:not(.nav-link) {
     color: $content-color;
     text-decoration: none;
     font-family: $serif;
-    font-size: 1.25em;
+    font-size: 1.4em;
     &:hover,
-    &:active {
-        text-decoration: wavy;
+    &:focus {
+        text-decoration: underline;
     }
 }
 
@@ -116,8 +116,12 @@ a:not(.nav-link) {
     border-bottom: calc(#{$logo-border} / 2) solid $background-color;
     width: fit-content;
     margin-top: 1.5rem;
+    &#home {
+        border-width: $logo-border;
+        padding-bottom: 0.35rem;
+    }
     &:hover,
-    &:active {
+    &:focus {
         border-color: $content-color;
     }
 }
@@ -183,7 +187,6 @@ code {
                 }
             }
         }
-
         #projects {
             .project {
                 height: 15rem;
@@ -230,10 +233,10 @@ code {
         transform: rotate(90deg);
         transform-origin: left top 0;
         pointer-events: none;
-        &#logo-wrap{
+        &#logo-wrap {
             transform: none;
-            top:4vh;
-            left:5vw;
+            top: 4vh;
+            left: 5vw;
             width: 20%;
             border-color: $content-color;
             border-width: 2vw;
@@ -242,7 +245,7 @@ code {
                 fill: $content-color;
             }
         }
-        &#makercube-bg{
+        &#makercube-bg {
             left: 36rem;
         }
     }
@@ -254,7 +257,7 @@ code {
     border: $logo-border solid $content-color;
     font-size: unset;
     background-color: unset;
-    pointer-events: none; // position: fixed;
+ // position: fixed;
     // mix-blend-mode: hard-light;
     svg {
         fill: $content-color;
@@ -271,15 +274,16 @@ header {
     margin: 5vh 0 2vh;
 }
 
-section{
+section {
     z-index: 2;
 }
 
 nav {
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: 3vmax;
     ul {
+        align-self: center;
         li {
             list-style: none;
             &:nth-child(2),
@@ -287,6 +291,9 @@ nav {
                 margin-top: 0.85em;
             }
         }
+    }
+    @media screen and (min-width: 50rem) {
+        grid-template-columns: min-content 1fr;
     }
 }
 
@@ -385,15 +392,15 @@ section {
         p {
             margin-top: unset;
         }
-        .img{
+        .img {
             padding: 1rem;
             background-image: url("../img/bgdot.gif");
             height: fit-content;
             width: max-content;
             width: -webkit-fill-available;
             margin: 2em auto;
-            img{
-                width:100%;
+            img {
+                width: 100%;
             }
             figcaption {
                 width: fit-content;
@@ -403,12 +410,12 @@ section {
                 margin: 1em auto 0;
                 span {
                     font-family: $serif;
-                    margin-right: 0.5em;
+                    margin-right: 0.25em;
                     font-size: 1.25em;
                 }
             }
         }
-        &#brief{
+        &#brief {
             grid-template-areas: "p1" "fig-1" "p2" "links";
             .p1 {
                 grid-area: p1;
@@ -439,7 +446,7 @@ section {
                 grid-template-rows: 1fr 2fr 1fr;
             }
         }
-        &#research{
+        &#research {
             grid-template-areas: "p1" "fig-2" "p2" "fig-3" "p3";
             .p1 {
                 grid-area: p1;
@@ -453,7 +460,7 @@ section {
             #fig-2 {
                 grid-area: fig-2;
             }
-            #fig-3{
+            #fig-3 {
                 grid-area: fig-3;
             }
             @media screen and (min-width: 50rem) {
@@ -461,13 +468,60 @@ section {
                 .img {
                     width: unset;
                     margin: initial;
-
                 }
             }
             @media screen and (min-width: 80rem) {
                 grid-template-areas: "p1 p1 . ." ". fig-2 fig-2 p2" ". fig-2 fig-2 ." "fig-3 fig-3 fig-3 p3" "fig-3 fig-3 fig-3 .";
                 grid-template-columns: repeat(4, 1fr);
-                .p3{
+                .p3 {
+                    align-self: end;
+                }
+            }
+        }
+        &#solution{
+            grid-template-areas: "p1" "fig-4" "p2" "fig-5" "p3";
+            .p1 {
+                grid-area: p1;
+            }
+            .p2 {
+                grid-area: p2;
+                align-self: end;
+            }
+            .p3 {
+                grid-area: p3;
+            }
+            #fig-4 {
+                grid-area: fig-4;
+                max-width: 15rem;
+                img{
+                    max-width: 15rem;
+                }
+            }
+            #fig-5 {
+                grid-area: fig-5;
+            }
+            .img{
+                img{
+                    width:100%;
+                }
+            }
+            @media screen and (min-width: 50rem) {
+                grid-template-areas: "fig-4 p1 p1 ." "fig-4 p2 p2 ." "fig-5 fig-5 p3 p3";
+                .img {
+                    width: unset;
+                    margin: initial;
+                    &#fig-4{
+                        max-width: unset;
+                        img{
+                            max-width: unset;
+                        }
+                    }
+                }
+            }
+            @media screen and (min-width: 80rem) {
+                grid-template-areas: "p1 p1 . ." "fig-4 p2 . ." "fig-4 fig-5 fig-5 p3" ". fig-5 fig-5 .";
+                grid-template-columns: repeat(4, 1fr);
+                .p3 {
                     align-self: end;
                 }
             }
@@ -497,6 +551,10 @@ section {
             }
             &:nth-of-type(3) {
                 grid-row: 4;
+            }
+            .external-link {
+                margin-top: 0.25em;
+                display: block;
             }
         }
         @media screen and (min-width:50rem) {
@@ -579,4 +637,9 @@ main {
             }
         }
     }
+}
+
+footer{
+    display:flex;
+    justify-content: space-between;
 }
