@@ -134,6 +134,14 @@ code {
     border-radius: 0.15rem;
 }
 
+.blur {
+	filter: blur(5px);
+	transition: filter 0.3s;
+	&.lazyloaded{
+		filter: blur(0);
+	}
+}
+
 .main-wrap {
     height: fit-content;
     padding: 12vh 5vw 6vh;
@@ -147,7 +155,7 @@ code {
         margin: unset;
         #home-main {
             display: grid;
-            grid-template-areas: "h" "pBio" "pEdu" "nav";
+            grid-template-areas: "h" "pBio" "nav" "pEdu" "more";
             grid-template-columns: 1fr;
             h1 {
                 font-size: 3.5rem;
@@ -167,18 +175,38 @@ code {
                     grid-area: pEdu;
                 }
             }
+            #more-about {
+                grid-area: more;
+                font-size: 2rem;
+            }
             nav {
                 grid-area: nav;
                 align-items: end;
                 padding-top: 3rem;
+                display: initial;
+                padding-right: 5vw;
+                align-self: end;
+                * {
+                    display: block;
+                }
+                h1 {
+                    font-size: 1.8rem;
+                    text-transform: uppercase;
+                    color: $faded-color;
+                }
+                li {
+                    a {
+                        padding-bottom: 1rem;
+                    }
+                }
             }
             @media screen and (min-width:50rem) {
                 grid-template-columns: repeat(3, 1fr);
-                grid-template-areas: "h h h" "pBio pBio ." "nav pEdu pEdu";
+                grid-template-areas: "h h h" "pBio pBio ." "nav pEdu pEdu" ". more more";
             }
             @media screen and (min-width:90rem) {
                 grid-template-columns: min-content repeat(3, 1fr); // grid-column-gap: 2vw;
-                grid-template-areas: "h h h ." "pBio pBio pBio ." "nav . pEdu pEdu";
+                grid-template-areas: "h h h ." "pBio pBio pBio ." "nav nav pEdu pEdu" "nav nav more more";
                 h1 {
                     font-size: 4rem;
                 }
@@ -256,12 +284,20 @@ code {
     padding: $logo-padding;
     border: $logo-border solid $content-color;
     font-size: unset;
-    background-color: unset;
- // position: fixed;
+    background-color: unset; // position: fixed;
     // mix-blend-mode: hard-light;
     svg {
         fill: $content-color;
         background-color: unset;
+    }
+    &:hover, &:focus{
+        background-color: $content-color;
+        svg {
+            fill: $background-color;
+        }
+    }
+    *{
+        transition: none;
     }
 }
 
@@ -299,7 +335,7 @@ nav {
 
 header {
     &#makercube {
-        background-image: url("../img/makercube/makercube2.png");
+        background-image: url("../img/makercube/makercube1.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center top;
@@ -357,18 +393,12 @@ header {
             }
         }
         @media screen and (min-width:50rem) {
-            grid-template-areas: "c c" "m1 m2" "m3 m4"; // grid-auto-rows: 1fr;
+            grid-template-areas: "c c" "m1 m2" "m3 m4";
+            background-image: url(../img/makercube/makercube2.png);
         }
         @media screen and (min-width:80rem) {
             grid-template-areas: "c c . ." "m1 m2 m3 m4";
-        }
-    }
-    &#resume {
-        // grid-template-columns: $logo-container-width 1fr;
-        // grid-column-gap: 3vmax;
-        h1 {
-            // grid-area: content;
-            // grid-column: 2 / span 1;
+            background-image: url(../img/makercube/makercube3.png);
         }
     }
     * {
@@ -478,7 +508,7 @@ section {
                 }
             }
         }
-        &#solution{
+        &#solution {
             grid-template-areas: "p1" "fig-4" "p2" "fig-5" "p3";
             .p1 {
                 grid-area: p1;
@@ -493,16 +523,16 @@ section {
             #fig-4 {
                 grid-area: fig-4;
                 max-width: 15rem;
-                img{
+                img {
                     max-width: 15rem;
                 }
             }
             #fig-5 {
                 grid-area: fig-5;
             }
-            .img{
-                img{
-                    width:100%;
+            .img {
+                img {
+                    width: 100%;
                 }
             }
             @media screen and (min-width: 50rem) {
@@ -510,9 +540,9 @@ section {
                 .img {
                     width: unset;
                     margin: initial;
-                    &#fig-4{
+                    &#fig-4 {
                         max-width: unset;
-                        img{
+                        img {
                             max-width: unset;
                         }
                     }
@@ -524,6 +554,21 @@ section {
                 .p3 {
                     align-self: end;
                 }
+            }
+        }
+        &#summary {
+            grid-template-areas: "p1" "fig-6";
+            .p1 {
+                grid-area: p1;
+                align-self: center;
+            }
+            #fig-6 {
+                grid-area: fig-6;
+            }
+            @media screen and (min-width: 50rem) {
+                grid-template-areas: "fig-6 p1";
+                width: unset;
+                margin: initial;
             }
         }
     }
@@ -639,7 +684,7 @@ main {
     }
 }
 
-footer{
-    display:flex;
+footer {
+    display: flex;
     justify-content: space-between;
 }

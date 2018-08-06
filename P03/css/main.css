@@ -108,6 +108,20 @@ code {
   border-radius: 0.15rem;
 }
 
+.blur {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transition: -webkit-filter 0.3s;
+  transition: -webkit-filter 0.3s;
+  transition: filter 0.3s;
+  transition: filter 0.3s, -webkit-filter 0.3s;
+}
+
+.blur.lazyloaded {
+  -webkit-filter: blur(0);
+          filter: blur(0);
+}
+
 .main-wrap {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -129,7 +143,7 @@ code {
 .main-wrap#home-wrap #home-main {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "h" "pBio" "pEdu" "nav";
+      grid-template-areas: "h" "pBio" "nav" "pEdu" "more";
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 }
@@ -157,26 +171,52 @@ code {
 }
 
 .main-wrap#home-wrap #home-main p:nth-of-type(2) {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: pEdu;
 }
 
+.main-wrap#home-wrap #home-main #more-about {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: more;
+  font-size: 2rem;
+}
+
 .main-wrap#home-wrap #home-main nav {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: nav;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
   padding-top: 3rem;
+  display: initial;
+  padding-right: 5vw;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.main-wrap#home-wrap #home-main nav * {
+  display: block;
+}
+
+.main-wrap#home-wrap #home-main nav h1 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: rgba(0, 52, 92, 0.8);
+}
+
+.main-wrap#home-wrap #home-main nav li a {
+  padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 50rem) {
   .main-wrap#home-wrap #home-main {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "h h h" "pBio pBio ." "nav pEdu pEdu";
+        grid-template-areas: "h h h" "pBio pBio ." "nav pEdu pEdu" ". more more";
   }
 }
 
@@ -185,7 +225,7 @@ code {
     -ms-grid-columns: min-content (1fr)[3];
         grid-template-columns: -webkit-min-content repeat(3, 1fr);
         grid-template-columns: min-content repeat(3, 1fr);
-        grid-template-areas: "h h h ." "pBio pBio pBio ." "nav . pEdu pEdu";
+        grid-template-areas: "h h h ." "pBio pBio pBio ." "nav nav pEdu pEdu" "nav nav more more";
   }
   .main-wrap#home-wrap #home-main h1 {
     font-size: 4rem;
@@ -289,6 +329,19 @@ code {
   background-color: unset;
 }
 
+#logo-wrap:hover, #logo-wrap:focus {
+  background-color: #00345c;
+}
+
+#logo-wrap:hover svg, #logo-wrap:focus svg {
+  fill: #fdfdf6;
+}
+
+#logo-wrap * {
+  -webkit-transition: none;
+  transition: none;
+}
+
 .difference-filter {
   mix-blend-mode: difference;
 }
@@ -333,7 +386,7 @@ nav ul li:nth-child(2), nav ul li:nth-child(3) {
 }
 
 header#makercube {
-  background-image: url("../img/makercube/makercube2.png");
+  background-image: url("../img/makercube/makercube1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -418,12 +471,14 @@ header#makercube .metadata h3 {
 @media screen and (min-width: 50rem) {
   header#makercube {
         grid-template-areas: "c c" "m1 m2" "m3 m4";
+    background-image: url(../img/makercube/makercube2.png);
   }
 }
 
 @media screen and (min-width: 80rem) {
   header#makercube {
         grid-template-areas: "c c . ." "m1 m2 m3 m4";
+    background-image: url(../img/makercube/makercube3.png);
   }
 }
 
@@ -674,6 +729,33 @@ section .section-content#solution .img img {
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
         align-self: end;
+  }
+}
+
+section .section-content#summary {
+      grid-template-areas: "p1" "fig-6";
+}
+
+section .section-content#summary .p1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: p1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+section .section-content#summary #fig-6 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: fig-6;
+}
+
+@media screen and (min-width: 50rem) {
+  section .section-content#summary {
+        grid-template-areas: "fig-6 p1";
+    width: unset;
+    margin: initial;
   }
 }
 
