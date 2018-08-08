@@ -135,11 +135,11 @@ code {
 }
 
 .blur {
-	filter: blur(5px);
-	transition: filter 0.3s;
-	&.lazyloaded{
-		filter: blur(0);
-	}
+    filter: blur(5px);
+    transition: filter 0.3s;
+    &.lazyloaded {
+        filter: blur(0);
+    }
 }
 
 .main-wrap {
@@ -249,7 +249,7 @@ code {
                 background-size: cover;
             }
         }
-        footer{
+        footer {
             position: fixed;
             bottom: 0;
             width: fit-content;
@@ -295,13 +295,14 @@ code {
         fill: $content-color;
         background-color: unset;
     }
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         background-color: $content-color;
         svg {
             fill: $background-color;
         }
     }
-    *{
+    * {
         transition: none;
     }
 }
@@ -339,75 +340,88 @@ nav {
 }
 
 header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: unset;
+    display: grid;
+    align-content: space-between;
+    grid-template-areas: "c" "m1" "m2" "m3" "m4";
+    grid-gap: 2vmin 3vmax;
+    padding: 5vh 5vw;
+    .header-content {
+        grid-area: c;
+        max-width: 50ch;
+        margin-bottom: 5vmin;
+        h1,
+        #project-desc {
+            padding: 1rem;
+            color: $content-color;
+            mix-blend-mode: luminosity;
+            background-color: $background-color;
+            margin: 0.2rem 0;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+    }
+    .metadata {
+        padding-bottom: 2vh;
+        &#roles {
+            grid-area: m1;
+        }
+        &#tools {
+            grid-area: m2;
+        }
+        &#skills {
+            grid-area: m3;
+        }
+        &#team {
+            grid-area: m4;
+        }
+        * {
+            display: inline;
+            line-height: 1.75em;
+            margin: 0.2em 0;
+        }
+        p {
+            color: white;
+            display: inline;
+        }
+        h3 {
+            color: $content-color;
+            padding: 0.2em;
+            mix-blend-mode: luminosity;
+            background-color: $background-color;
+            margin-top: 0;
+        }
+    }
     &#makercube {
-        background-image: url("../img/makercube/makercube1.png");
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-image: url('../img/makercube/makercube1.png');
         background-position: center top;
-        background-color: unset;
-        display: grid;
-        align-content: space-between;
-        grid-template-areas: "c" "m1" "m2" "m3" "m4";
-        grid-gap: 2vmin 3vmax;
-        padding: 5vh 5vw;
-        .header-content {
-            grid-area: c;
-            max-width: 50ch;
-            margin-bottom: 5vmin;
-            h1,
-            #project-desc {
-                padding: 1rem;
-                color: $content-color;
-                mix-blend-mode: luminosity;
-                background-color: $background-color;
-                margin: 0.2rem 0;
-            }
-            h1 {
-                font-size: 3rem;
-            }
-        }
-        .metadata {
-            padding-bottom: 2vh;
-            &#roles {
-                grid-area: m1;
-            }
-            &#tools {
-                grid-area: m2;
-            }
-            &#skills {
-                grid-area: m3;
-            }
-            &#team {
-                grid-area: m4;
-            }
-            * {
-                display: inline;
-                line-height: 1.75em;
-                margin: 0.2em 0;
-            }
-            p {
-                color: white;
-                display: inline;
-            }
-            h3 {
-                color: $content-color;
-                padding: 0.2em;
-                mix-blend-mode: luminosity;
-                background-color: $background-color;
-                margin-top: 0;
-            }
-        }
-        @media screen and (min-width:50rem) {
-            grid-template-areas: "c c" "m1 m2" "m3 m4";
-            background-image: url(../img/makercube/makercube2.png);
+        @media screen and (min-width: 50rem) {
+            background-image: url('../img/makercube/makercube2.png');
         }
         @media screen and (min-width:80rem) {
-            grid-template-areas: "c c . ." "m1 m2 m3 m4";
-            background-image: url(../img/makercube/makercube3.png);
+            background-image: url('../img/makercube/makercube3.png');
+        }
+    }
+    &#visier{
+        background-image: url('../img/visier/header.png');
+        background-position: center top;
+        @media screen and (min-width: 50rem) {
+            grid-template-areas: "c c ." "m1 m2 m3";
+        }
+        @media screen and (min-width:80rem) {
         }
     }
     * {
         background-color: unset;
+    }
+    @media screen and (min-width: 50rem) {
+        grid-template-areas: "c c" "m1 m2" "m3 m4";
+    }
+    @media screen and (min-width:80rem) {
+        grid-template-areas: "c c . ." "m1 m2 m3 m4";
     }
 }
 
@@ -571,6 +585,126 @@ section {
                 grid-area: fig-6;
             }
             @media screen and (min-width: 50rem) {
+                grid-template-areas: "fig-6 p1";
+                width: unset;
+                margin: initial;
+            }
+        }
+        &#challenge {
+            grid-template-areas: "p1" "fig-2" "fig-3";
+            .p1 {
+                grid-area: p1;
+            }
+            .p2 {
+                grid-area: p2;
+            }
+            #fig-2 {
+                grid-area: fig-2;
+            }
+            #fig-3 {
+                grid-area: fig-3;
+            }
+            @media screen and (min-width: 50rem) {
+                grid-template-areas: "fig-2 fig-2 ." "fig-3 fig-3 ." ". p1 p1";
+                .img {
+                    width: unset;
+                    margin: initial;
+                }
+                .p2 {
+                    align-self: end;
+                }
+            }
+            @media screen and (min-width: 80rem) {
+                grid-template-areas: "fig-2 fig-2 fig-3 fig-3" ". p1 p1 .";
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        &#approach {
+            grid-template-areas: "p1" "fig-4" "p2";
+            .p1 {
+                grid-area: p1;
+            }
+            .p2 {
+                grid-area: p2;
+                align-self: end;
+            }
+            .p3 {
+                grid-area: p3;
+            }
+            #fig-4 {
+                grid-area: fig-4;
+            }
+            .img {
+                img {
+                    width: 100%;
+                }
+            }
+            @media screen and (min-width: 50rem) {
+                grid-template-areas: "p1 p1 ." ". fig-4 fig-4" "p2 p2 .";
+                .img {
+                    width: unset;
+                    margin: initial;
+                    &#fig-4 {
+                        max-width: unset;
+                        img {
+                            max-width: unset;
+                        }
+                    }
+                }
+            }
+            @media screen and (min-width: 80rem) {
+                grid-template-areas: "p1 p1 . ." ". fig-4 fig-4 ." "p2 p2 . .";
+                grid-template-columns: repeat(4, 1fr);
+                .p3 {
+                    align-self: end;
+                }
+            }
+        }
+        &#visier-solution {
+            grid-template-areas: "p1" "fig-5" "p2";
+            .p1 {
+                grid-area: p1;
+            }
+            .p2 {
+                grid-area: p2;
+            }
+            .p3 {
+                grid-area: p3;
+            }
+            #fig-5 {
+                grid-area: fig-5;
+                max-width: 15rem;
+                img {
+                    max-width: 15rem;
+                }
+            }
+            .img {
+                img {
+                    width: 100%;
+                }
+            }
+            @media screen and (min-width: 50rem) {
+                grid-template-areas: "p1 p1 p1 ." ". . fig-5 p2";
+                .img {
+                    width: unset;
+                    margin: initial;
+                }
+            }
+            @media screen and (min-width: 80rem) {
+                grid-template-areas: "p1 . ." ". fig-5 p2";
+            }
+        }
+        &#visier-summary {
+            grid-template-areas: "fig-6" "p1";
+            margin-bottom: 5vh;
+            .p1 {
+                grid-area: p1;
+                align-self: center;
+            }
+            #fig-6 {
+                grid-area: fig-6;
+            }
+            @media screen and (min-width: 80rem) {
                 grid-template-areas: "fig-6 p1";
                 width: unset;
                 margin: initial;
